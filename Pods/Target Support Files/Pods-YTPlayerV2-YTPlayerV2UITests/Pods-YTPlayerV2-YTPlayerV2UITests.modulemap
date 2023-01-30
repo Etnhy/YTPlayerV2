@@ -1,0 +1,6 @@
+framework module Pods_YTPlayerV2_YTPlayerV2UITests {
+  umbrella header "Pods-YTPlayerV2-YTPlayerV2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
