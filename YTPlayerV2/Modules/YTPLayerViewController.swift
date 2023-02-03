@@ -33,17 +33,18 @@ class YTPLayerViewController: UIViewController {
             make.size.equalTo(CGSize(width: self.view.frame.width,height: 700))
         }
         self.view.layer.cornerRadius = 40
+        self.yotubeWebView.layer.cornerRadius = 12
+        
         self.showHideButton.layer.cornerRadius = 40
         self.playPauseButton.addTarget(self, action: #selector(playerPauseAction), for: .touchUpInside)
     }
     
     @objc fileprivate func playerPauseAction() {
         isPlayed.toggle()
-       print(isPlayed)
        var buttonConfig = UIButton.Configuration.filled()
        buttonConfig.image = isPlayed ? UIImage(systemName: "pause.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34)) : UIImage(systemName: "play.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34))
        buttonConfig.baseBackgroundColor = .clear
-//       buttonConfig.baseForegroundColor = AppColors.PlayerColor.playerButtonsColor
+        buttonConfig.baseForegroundColor = .black
        playPauseButton.configuration = buttonConfig
     }
     }

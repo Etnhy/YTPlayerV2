@@ -16,6 +16,7 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var playerShow: Bool = false
     
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
 
@@ -45,8 +46,9 @@ class ContainerViewController: UIViewController {
     fileprivate func setupYTPlayer() {
         self.addChild(playerViewController)
         self.view.addSubview(playerViewController.view)
+        self.playerViewController.showHideButton.addTarget(self, action: #selector(showHidePlayerAction), for: .touchUpInside)
         playerViewController.view.snp.makeConstraints { make in
-            make.bottom.equalTo(self.view.snp.bottom)
+            make.bottom.equalTo(self.view.snp.bottom).offset(650)
             make.leading.trailing.equalTo(self.view)
             
         }
@@ -61,6 +63,27 @@ class ContainerViewController: UIViewController {
         
         
         
+    }
+    
+    //MARK: - actions
+    @objc private func showHidePlayerAction() {
+        playerShow.toggle()
+        
+        UIView.animate(withDuration: 0.7, delay: 0.05, options: [.curveEaseOut]) { [self] in
+            switch playerShow {
+            case false:
+                self.playerViewController.view.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.view).offset(playerViewController.view.frame.height - 50)
+                    make.leading.trailing.equalTo(self.view)
+                }
+            case true:
+                playerViewController.view.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.view)
+                    make.leading.trailing.equalTo(self.view)
+                }
+            }
+            self.view.layoutIfNeeded()
+        }
     }
     
 }
