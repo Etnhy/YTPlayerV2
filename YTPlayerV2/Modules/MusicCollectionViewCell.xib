@@ -16,16 +16,52 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwC-QR-BCq">
-                        <rect key="frame" x="50" y="80" width="70" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wy3-a4-m1U">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="90"/>
+                        <color key="backgroundColor" red="0.78823529410000004" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="uES-yK-RoF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listenersCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbz-6j-21P">
+                        <rect key="frame" x="3" y="131" width="164" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="164" id="2Mx-ZP-UWX"/>
+                            <constraint firstAttribute="height" constant="20" id="J1i-wd-igR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="song - name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clz-Db-b35">
+                        <rect key="frame" x="3" y="94" width="164" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="164" id="MQ3-rA-18T"/>
+                            <constraint firstAttribute="height" constant="25" id="zLC-cJ-qwE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hbz-6j-21P" secondAttribute="trailing" constant="3" id="N28-mK-856"/>
+                <constraint firstAttribute="trailing" secondItem="Wy3-a4-m1U" secondAttribute="trailing" id="RBC-cJ-QRA"/>
+                <constraint firstItem="clz-Db-b35" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="U4K-zF-6gV"/>
+                <constraint firstItem="clz-Db-b35" firstAttribute="top" secondItem="Wy3-a4-m1U" secondAttribute="bottom" constant="4" id="Waw-zb-6pB"/>
+                <constraint firstItem="hbz-6j-21P" firstAttribute="top" secondItem="clz-Db-b35" secondAttribute="bottom" constant="12" id="c4I-t0-JV6"/>
+                <constraint firstAttribute="trailing" secondItem="clz-Db-b35" secondAttribute="trailing" constant="3" id="dqa-ZC-wNt"/>
+                <constraint firstItem="Wy3-a4-m1U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jfB-lA-3t3"/>
+                <constraint firstItem="Wy3-a4-m1U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="man-Rj-7Xt"/>
+                <constraint firstItem="hbz-6j-21P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="x06-Ei-edh"/>
+            </constraints>
+            <connections>
+                <outlet property="listenersCountLabel" destination="hbz-6j-21P" id="NkN-gy-xax"/>
+                <outlet property="musicImageView" destination="Wy3-a4-m1U" id="RV1-Zh-ziU"/>
+                <outlet property="musicSongName" destination="clz-Db-b35" id="JV6-Hj-UKE"/>
+            </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
