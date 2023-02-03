@@ -17,7 +17,14 @@ class VideoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = .blue
+        settings()
     }
 
+    fileprivate func settings () {
+        self.videoImageView.layer.cornerRadius = 8
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 0.2
+        self.layer.borderColor = UIColor.blue.cgColor
+
+    }
 }

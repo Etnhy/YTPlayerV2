@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7mz-tP-fQp">
-                                <rect key="frame" x="16" y="366" width="361" height="180"/>
+                                <rect key="frame" x="2" y="366" width="389" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="IOz-bD-Pgg"/>
@@ -100,7 +100,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xAp-Xh-iui">
-                                <rect key="frame" x="16" y="595" width="361" height="210"/>
+                                <rect key="frame" x="2" y="595" width="389" height="210"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="jv5-9o-d4F"/>
@@ -127,30 +127,39 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Yud-q7-9no"/>
                                 </connections>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="PS9-A8-azz">
+                                <rect key="frame" x="138" y="287" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ND8-It-I0i"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7mz-tP-fQp" secondAttribute="trailing" constant="16" id="2ya-81-FaO"/>
                             <constraint firstItem="l19-pV-3u6" firstAttribute="top" secondItem="1I4-VB-gcy" secondAttribute="bottom" constant="8" symbolic="YES" id="A2D-2B-sly"/>
+                            <constraint firstItem="PS9-A8-azz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="138" id="Fjm-Tl-MgJ"/>
+                            <constraint firstItem="pNy-hG-egQ" firstAttribute="top" secondItem="PS9-A8-azz" secondAttribute="bottom" constant="8" symbolic="YES" id="Gx4-gw-NHb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l19-pV-3u6" secondAttribute="trailing" constant="2" id="INZ-TK-9ik"/>
                             <constraint firstItem="7mz-tP-fQp" firstAttribute="top" secondItem="pNy-hG-egQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Jvq-rO-GyJ"/>
-                            <constraint firstItem="xAp-Xh-iui" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="JzU-Wy-9zW"/>
+                            <constraint firstItem="xAp-Xh-iui" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="2" id="JzU-Wy-9zW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8Q2-S9-qq8" secondAttribute="trailing" constant="16" id="LjW-d5-eUj"/>
-                            <constraint firstItem="7mz-tP-fQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="P70-Fk-ZFL"/>
+                            <constraint firstItem="7mz-tP-fQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="2" id="P70-Fk-ZFL"/>
                             <constraint firstItem="pNy-hG-egQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TMA-Dy-UkJ"/>
                             <constraint firstItem="xAp-Xh-iui" firstAttribute="top" secondItem="8Q2-S9-qq8" secondAttribute="bottom" constant="8" symbolic="YES" id="XAC-vb-A8j"/>
                             <constraint firstItem="l19-pV-3u6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="2" id="Z3b-Cq-Qca"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xAp-Xh-iui" secondAttribute="trailing" constant="16" id="aZq-bh-OGP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7mz-tP-fQp" secondAttribute="trailing" constant="16" id="bRw-FZ-Bru"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xAp-Xh-iui" secondAttribute="trailing" constant="2" id="aZq-bh-OGP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7mz-tP-fQp" secondAttribute="trailing" constant="2" id="bRw-FZ-Bru"/>
                             <constraint firstItem="7mz-tP-fQp" firstAttribute="top" secondItem="pNy-hG-egQ" secondAttribute="bottom" constant="8" symbolic="YES" id="isw-ZO-bKC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pNy-hG-egQ" secondAttribute="trailing" constant="16" id="jFc-Uf-fPZ"/>
                             <constraint firstItem="8Q2-S9-qq8" firstAttribute="top" secondItem="7mz-tP-fQp" secondAttribute="bottom" constant="8" symbolic="YES" id="oSz-0Z-X8M"/>
-                            <constraint firstItem="7mz-tP-fQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="pKb-m5-Fsm"/>
                             <constraint firstItem="1I4-VB-gcy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pOO-PH-aHp"/>
                             <constraint firstItem="1I4-VB-gcy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="siv-8i-vR9"/>
                             <constraint firstItem="8Q2-S9-qq8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="uBh-9n-gm2"/>
                             <constraint firstItem="pNy-hG-egQ" firstAttribute="top" secondItem="l19-pV-3u6" secondAttribute="bottom" constant="8" symbolic="YES" id="we0-qX-e1c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PS9-A8-azz" secondAttribute="trailing" constant="139" id="xzU-yP-Tmk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -167,6 +176,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

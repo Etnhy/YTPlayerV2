@@ -18,7 +18,7 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCarouselCV()
+        setupCVs()
         registerCell()
 
 
@@ -26,9 +26,11 @@ class ContainerViewController: UIViewController {
     }
     
     
-    fileprivate func setupCarouselCV() {
+    fileprivate func setupCVs() {
         carouselCollectionView.layer.cornerRadius = 10
-        
+        carouselCollectionView.backgroundColor = .clear
+        musicPlaylistCollectionView.backgroundColor = .clear
+        videoPlaylistCollectionView.backgroundColor = .clear
         
         
     }

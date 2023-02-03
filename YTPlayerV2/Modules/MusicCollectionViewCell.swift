@@ -16,8 +16,14 @@ class MusicCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .yellow
-        // Initialization code
+        
+        settings()
+    }
+    fileprivate func settings() {
+        self.musicImageView.layer.cornerRadius = 8
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 0.2
+        self.layer.borderColor = UIColor.blue.cgColor
     }
 
 }

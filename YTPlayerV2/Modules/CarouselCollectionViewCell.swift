@@ -17,7 +17,12 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        settings()
+    }
+    fileprivate func settings () {
+        authorImageView.layer.cornerRadius = 8
+        self.layer.cornerRadius = 8
+
     }
 
 }
