@@ -20,6 +20,15 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         setupCarouselCV()
         registerCell()
+        
+        print("car - \(self.carouselCollectionView.frame.width)")
+        print("carH - \(self.carouselCollectionView.frame.height)")
+
+        print("music - \(self.musicPlaylistCollectionView.frame.height)")
+        print("video - \(self.videoPlaylistCollectionView.frame.height)")
+
+
+
     }
     
     
@@ -87,11 +96,12 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case carouselCollectionView:
             return CGSize(width: self.carouselCollectionView.frame.width, height: self.carouselCollectionView.frame.height)
-            
+
         case musicPlaylistCollectionView:
             return CGSize(width: 170, height: self.musicPlaylistCollectionView.frame.height)
         case videoPlaylistCollectionView :
             return CGSize(width: 200, height: self.videoPlaylistCollectionView.frame.height)
+
         default: return CGSize(width: 100, height: 100)
             
         }
