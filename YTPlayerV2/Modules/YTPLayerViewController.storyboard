@@ -15,17 +15,138 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgO-ep-3KD">
+                                <rect key="frame" x="0.0" y="2" width="393" height="30"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aqA-oz-DNs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system">
+                                    <color key="baseForegroundColor" red="0.78823529410000004" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-jR-Rwv">
+                                <rect key="frame" x="8" y="52" width="377" height="210"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="4Et-vL-k4g"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebanon Hanower -  Gallowdance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSb-RZ-J2O">
+                                <rect key="frame" x="16" y="305" width="361" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8zG-K2-y1Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-tc-5Jq">
+                                <rect key="frame" x="166.66666666666666" y="441" width="60" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="HG8-WJ-VuZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="pe5-OX-vMo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3n6-Lo-Z8w">
+                                <rect key="frame" x="36" y="276" width="320" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="gzX-AS-qes"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listeners counts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtp-cs-jNY">
+                                <rect key="frame" x="16" y="356" width="361" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="a5d-2X-DEC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-r8-0cP">
+                                <rect key="frame" x="273" y="441" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Er-iV-OB4"/>
+                                    <constraint firstAttribute="width" constant="80" id="Ch9-5M-awE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="forward.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuG-0P-uLb">
+                                <rect key="frame" x="40" y="441" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1xe-g6-D5t"/>
+                                    <constraint firstAttribute="width" constant="80" id="Whk-9w-2qV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backward.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="bZd-jR-Rwv" firstAttribute="top" secondItem="HgO-ep-3KD" secondAttribute="bottom" constant="20" id="0XX-AD-0ov"/>
+                            <constraint firstItem="HgO-ep-3KD" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="1P9-ps-YWn"/>
+                            <constraint firstItem="fSb-RZ-J2O" firstAttribute="top" secondItem="3n6-Lo-Z8w" secondAttribute="bottom" constant="25" id="7H7-18-vXA"/>
+                            <constraint firstItem="gtp-cs-jNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8xs-nI-ezd"/>
+                            <constraint firstAttribute="trailing" secondItem="HgO-ep-3KD" secondAttribute="trailing" id="CLE-J9-en4"/>
+                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="top" secondItem="bZd-jR-Rwv" secondAttribute="bottom" constant="14" id="Cxm-EB-SwP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fSb-RZ-J2O" secondAttribute="trailing" constant="16" id="EZe-MS-Tow"/>
+                            <constraint firstItem="HgO-ep-3KD" firstAttribute="trailing" secondItem="bZd-jR-Rwv" secondAttribute="trailing" constant="8" id="K1d-PH-Ddu"/>
+                            <constraint firstItem="tuG-0P-uLb" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="Rsz-Ls-YfW"/>
+                            <constraint firstItem="HgO-ep-3KD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="2" id="StV-y3-DkL"/>
+                            <constraint firstItem="shJ-r8-0cP" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="TQg-Wn-Ig8"/>
+                            <constraint firstItem="tuG-0P-uLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="TcJ-IW-Pc3"/>
+                            <constraint firstItem="tOT-tc-5Jq" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="UIN-sX-FD3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3n6-Lo-Z8w" secondAttribute="trailing" constant="37" id="VH4-TZ-edB"/>
+                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="cPw-jW-Af6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="shJ-r8-0cP" secondAttribute="trailing" constant="40" id="gSP-XO-1cd"/>
+                            <constraint firstItem="bZd-jR-Rwv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="u3L-hw-OTQ"/>
+                            <constraint firstItem="gtp-cs-jNY" firstAttribute="top" secondItem="fSb-RZ-J2O" secondAttribute="bottom" constant="21" id="vhI-x1-kTT"/>
+                            <constraint firstItem="fSb-RZ-J2O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="x80-Ic-XOc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gtp-cs-jNY" secondAttribute="trailing" constant="16" id="z0J-9M-obv"/>
+                            <constraint firstItem="tOT-tc-5Jq" firstAttribute="centerX" secondItem="gtp-cs-jNY" secondAttribute="centerX" id="zKw-CR-xZa"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="700"/>
+                    <connections>
+                        <outlet property="backwardButton" destination="tuG-0P-uLb" id="YXT-Sq-IRB"/>
+                        <outlet property="forwardButton" destination="shJ-r8-0cP" id="ATj-Eq-52b"/>
+                        <outlet property="listenersCountsLAbel" destination="gtp-cs-jNY" id="MYx-fs-CPU"/>
+                        <outlet property="playPauseButton" destination="tOT-tc-5Jq" id="Vxl-xE-AnC"/>
+                        <outlet property="showHideButton" destination="HgO-ep-3KD" id="49K-ac-QBV"/>
+                        <outlet property="songNameLabel" destination="fSb-RZ-J2O" id="AbO-1C-luc"/>
+                        <outlet property="songProgress" destination="3n6-Lo-Z8w" id="V0i-8a-uph"/>
+                        <outlet property="yotubeWebView" destination="bZd-jR-Rwv" id="Bs0-Fq-LDl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="4"/>
+            <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="97"/>
+        <image name="backward.fill" catalog="system" width="128" height="77"/>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
