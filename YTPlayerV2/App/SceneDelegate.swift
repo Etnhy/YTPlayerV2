@@ -55,8 +55,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     private func setupRootViewController() {
-        let main = MainViewController()
-        let nav = UINavigationController(rootViewController: main)
+        
+        let container = UIStoryboard(name: "ContainerStoryboard", bundle: nil).instantiateViewController(withIdentifier: ContainerViewController.identifier) as! ContainerViewController
+
+//        let main = ContainerViewController()
+        let nav = UINavigationController(rootViewController: container)
         guard let window = window else { return }
         window.rootViewController = nav
         window.makeKeyAndVisible()
