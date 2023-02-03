@@ -14,8 +14,11 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     @IBOutlet weak var musicPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
-    
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    
+    let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
+
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
         didSet {
@@ -26,19 +29,27 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         setupCVs()
         registerCell()
-
+        setupYTPlayer()
 
 
     }
     
     
     fileprivate func setupCVs() {
-        carouselCollectionView.layer.cornerRadius = 10
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
         
         
+    }
+    fileprivate func setupYTPlayer() {
+        self.addChild(playerViewController)
+        self.view.addSubview(playerViewController.view)
+        playerViewController.view.snp.makeConstraints { make in
+            make.bottom.equalTo(self.view.snp.bottom)
+            make.leading.trailing.equalTo(self.view)
+            
+        }
     }
     
     fileprivate func registerCell() {
