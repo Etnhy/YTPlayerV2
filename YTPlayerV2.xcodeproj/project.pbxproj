@@ -202,9 +202,9 @@
 		7A2C9AE8298D234C002C71D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7A2C9AF3298D2F4B002C71D2 /* Video */,
-				7A2C9AEE298D2623002C71D2 /* Music */,
 				7A2C9AED298D25D7002C71D2 /* Carousel */,
+				7A2C9AEE298D2623002C71D2 /* Music */,
+				7A2C9AF3298D2F4B002C71D2 /* Video */,
 			);
 			name = Cells;
 			sourceTree = "<group>";

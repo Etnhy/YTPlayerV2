@@ -20,12 +20,6 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         setupCarouselCV()
         registerCell()
-        
-        print("car - \(self.carouselCollectionView.frame.width)")
-        print("carH - \(self.carouselCollectionView.frame.height)")
-
-        print("music - \(self.musicPlaylistCollectionView.frame.height)")
-        print("video - \(self.videoPlaylistCollectionView.frame.height)")
 
 
 

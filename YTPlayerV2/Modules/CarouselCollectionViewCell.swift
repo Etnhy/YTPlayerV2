@@ -8,12 +8,15 @@
 import UIKit
 
 class CarouselCollectionViewCell: UICollectionViewCell {
-    
     static let reuseIdentifier = "CarouselCollectionViewCell"
+    
+    @IBOutlet weak var authorImageView: UIImageView!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var subscribersCountLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .red
         // Initialization code
     }
 
