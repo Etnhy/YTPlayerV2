@@ -10,6 +10,10 @@ import UIKit
 class VideoCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "VideoCollectionViewCell"
 
+    @IBOutlet weak var videoImageView: UIImageView!
+    @IBOutlet weak var videoNameLabel: UILabel!
+    @IBOutlet weak var listenersCounter: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
