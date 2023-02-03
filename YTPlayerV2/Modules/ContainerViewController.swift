@@ -15,7 +15,13 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var musicPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
     
-    
+    @IBOutlet weak var pageControl: UIPageControl!
+    var newOffsetX: CGFloat = 0.0
+    private var currentPage = 0 {
+        didSet {
+            pageControl.currentPage = currentPage
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCVs()
@@ -82,6 +88,14 @@ extension ContainerViewController: UICollectionViewDataSource {
         }
         
     }
+    fileprivate func getCurrentPage() -> Int {
+        let visibleRect = CGRect(origin: carouselCollectionView.contentOffset, size: carouselCollectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = carouselCollectionView.indexPathForItem(at: visiblePoint) {
+            return visibleIndexPath.row
+        }
+        return currentPage
+    }
 }
 
 
@@ -104,6 +118,18 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
         
         
     }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+
 }
 
 

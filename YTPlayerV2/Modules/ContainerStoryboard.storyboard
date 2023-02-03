@@ -165,6 +165,7 @@
                     <connections>
                         <outlet property="carouselCollectionView" destination="l19-pV-3u6" id="OgL-BG-4rW"/>
                         <outlet property="musicPlaylistCollectionView" destination="7mz-tP-fQp" id="Yvx-5o-J8A"/>
+                        <outlet property="pageControl" destination="PS9-A8-azz" id="POr-Ed-Agw"/>
                         <outlet property="videoPlaylistCollectionView" destination="xAp-Xh-iui" id="CkC-u9-AnC"/>
                     </connections>
                 </viewController>
