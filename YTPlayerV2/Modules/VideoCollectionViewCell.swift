@@ -21,6 +21,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     }
 
     fileprivate func settings () {
+        self.videoImageView.backgroundColor = AppColors.backViewColor
         self.videoImageView.layer.cornerRadius = 8
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 0.2

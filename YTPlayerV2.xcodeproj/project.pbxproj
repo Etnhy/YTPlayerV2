@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FBFD4298EE773009A4A63 /* AppTheme.swift */; };
 		7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D73E029881DC7002FA5B5 /* AppDelegate.swift */; };
 		7A1D73E329881DC7002FA5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D73E229881DC7002FA5B5 /* SceneDelegate.swift */; };
 		7A1D73E829881DC7002FA5B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D73E629881DC7002FA5B5 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		205586B79FC0268EA2464C03 /* Pods-YTPlayerV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2Tests.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2Tests/Pods-YTPlayerV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2ABAA988F46A977559A89E7B /* Pods-YTPlayerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2.debug.xcconfig"; sourceTree = "<group>"; };
 		6A2913AFFEC0F24AA1EFDD71 /* Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		7A0FBFD4298EE773009A4A63 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		7A1D73DD29881DC7002FA5B5 /* YTPlayerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTPlayerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1D73E029881DC7002FA5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1D73E229881DC7002FA5B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7A0FBFD3298EE76D009A4A63 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7A0FBFD4298EE773009A4A63 /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		7A1C6F55298836D900D41718 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		7A1D73DF29881DC7002FA5B5 /* YTPlayerV2 */ = {
 			isa = PBXGroup;
 			children = (
+				7A0FBFD3298EE76D009A4A63 /* Theme */,
 				7A3CDF8A298EA69300B5A70C /* Models */,
 				7A3CDF85298E9E3F00B5A70C /* Network */,
 				7A1C6F562988372B00D41718 /* Modules */,
@@ -543,6 +554,7 @@
 				7A2C9AEB298D2363002C71D2 /* CarouselCollectionViewCell.swift in Sources */,
 				7A2C9AF1298D2633002C71D2 /* MusicCollectionViewCell.swift in Sources */,
 				7A3CDF8C298EA6A600B5A70C /* PlaylistsList.swift in Sources */,
+				7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */,
 				7A3CDF89298E9E7B00B5A70C /* NetworkConfiguration.swift in Sources */,
 				7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */,
 				7A2C9AE2298D1BFB002C71D2 /* ContainerViewController.swift in Sources */,

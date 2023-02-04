@@ -20,6 +20,7 @@ class MusicCollectionViewCell: UICollectionViewCell {
         settings()
     }
     fileprivate func settings() {
+        self.musicImageView.backgroundColor = AppColors.backViewColor
         self.musicImageView.layer.cornerRadius = 8
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 0.2

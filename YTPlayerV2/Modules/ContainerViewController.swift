@@ -41,10 +41,11 @@ class ContainerViewController: UIViewController {
         setupCVs()
         registerCell()
         setupYTPlayer()
-
     }
+
     
     fileprivate func setupCVs() {
+        self.view.backgroundColor = AppColors.mainAppColor
         self.presenter = ContainerPresenter(view: self, network: network)
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear

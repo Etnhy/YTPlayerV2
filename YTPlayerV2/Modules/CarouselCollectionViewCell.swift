@@ -22,6 +22,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         self.authorImageView.isSkeletonable = true
     }
     fileprivate func settings () {
+        self.authorImageView.backgroundColor = AppColors.backViewColor
         authorImageView.layer.cornerRadius = 8
         self.layer.cornerRadius = 8
 

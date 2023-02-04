@@ -20,8 +20,8 @@ class ContainerPresenter: ContainerViewProtocol {
     required init(view: ContainerProtocol, network: Network) {
         self.view = view
         self.network = network
-//        getPlaylists()
-        getMusicPlaylist(playlistID: "PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG")
+        getPlaylists()
+//        getMusicPlaylist(playlistID: "PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG")
     }
     
     
