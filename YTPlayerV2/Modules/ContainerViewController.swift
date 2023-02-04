@@ -17,10 +17,13 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    var presenter : ContainerViewProtocol?
-    var network = Network()
+
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
 
+    
+    var presenter : ContainerViewProtocol?
+    var network = Network()
+    var playlistsIDs: PlaylistsList?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -171,8 +174,10 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 
 
 extension ContainerViewController: ContainerProtocol {
-    func getIDs() {
-        print("ewqwe")
+    func setPlaylistsUD(playlists: PlaylistsList) {
+        self.playlistsIDs = playlists
+        
+        print(self.playlistsIDs)
     }
     
     

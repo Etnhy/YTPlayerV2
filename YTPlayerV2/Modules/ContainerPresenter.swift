@@ -22,12 +22,14 @@ class ContainerPresenter: ContainerViewProtocol {
         self.network = network
         getPlaylists()
     }
+    
+    
     func getPlaylists() {
         network.getPlaylists()
             .observe(on: MainScheduler.instance)
             .subscribe { playlists in
                 self.playlistsID = playlists
-                print(playlists)
+                self.view?.setPlaylistsUD(playlists: playlists)
             } onError: { error in
                 print(error)
             }

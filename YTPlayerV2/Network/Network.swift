@@ -21,19 +21,7 @@ class Network {
        return requestRx(url)
     }
     
-    
-//    func testreq() {
-//        let url = "\(Net.api_youtube)playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
-//        AF.request(url).responseJSON { response in
-//            switch response.result {
-//            case .success(let result):
-//                print(url)
-//                print(result)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
+
     
     fileprivate func requestRx<T:Codable>(_ urlConvertible:String) -> Observable<T>{
         return Observable<T>.create { observer  in
@@ -66,3 +54,18 @@ class Network {
             }
         }
 }
+
+
+
+//    func testreq() {
+//        let url = "\(Net.api_youtube)playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
+//        AF.request(url).responseJSON { response in
+//            switch response.result {
+//            case .success(let result):
+//                print(url)
+//                print(result)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }

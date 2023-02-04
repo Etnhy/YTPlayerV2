@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ContainerProtocol: AnyObject {
-    func getIDs()
+    func setPlaylistsUD(playlists: PlaylistsList)
 }
 protocol ContainerViewProtocol: AnyObject  {
     init(view:ContainerProtocol,network: Network)
