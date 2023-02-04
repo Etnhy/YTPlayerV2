@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RxSwift
 
 class ContainerPresenter: ContainerViewProtocol {
 
@@ -18,38 +17,43 @@ class ContainerPresenter: ContainerViewProtocol {
     weak var view: ContainerProtocol?
     var network: Network!
     
-    var dispose = DisposeBag()
     required init(view: ContainerProtocol, network: Network) {
         self.view = view
         self.network = network
-        getPlaylists()
-//        getMusicPlaylist(playlistID: "PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG")
+//        getPlaylists()
+        getMusicPlaylist(playlistID: "PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG")
     }
     
     
     func getPlaylists() {
-        network.getPlaylists()
-            .observe(on: MainScheduler.instance)
-            .subscribe { playlists in
-                self.playlistsID = playlists
-                self.view?.setPlaylistsUD(playlists: playlists)
-//                print(playlists)
-            } onError: { error in
+        network.getPlaylists { result in
+            switch result {
+            case .success(let succes):
+                self.view?.setPlaylistsUD(playlists: succes)
+            case .failure(let error):
                 print(error)
             }
-            .disposed(by: dispose)
+        }
     }
     
     func getMusicPlaylist(playlistID: String) {
         //PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG
-        network.getPlaylistItems(playlistId: playlistID)
-            .observe(on: MainScheduler.instance)
-            .subscribe { playlistItems in
-                print(playlistItems)
-            } onError: { error in
+        network.getPlaylistItems(playlistId: playlistID) { result in
+            switch result {
+            case .success(let succes):
+                print(succes)
+            case .failure(let error):
                 print(error)
             }
-            .disposed(by: dispose)
+        }
+//        network.getPlaylistItems(playlistId: playlistID)
+//            .observe(on: MainScheduler.instance)
+//            .subscribe { playlistItems in
+//                print(playlistItems)
+//            } onError: { error in
+//                print(error)
+//            }
+//            .disposed(by: dispose)
     }
     
 }

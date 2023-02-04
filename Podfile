@@ -10,8 +10,6 @@ target 'YTPlayerV2' do
 	pod 'Alamofire'
 	pod 'AlamofireImage'
 	pod "youtube-ios-player-helper"
-	pod 'RxSwift', '6.5.0'
-    	pod 'RxCocoa', '6.5.0'
 	pod 'SkeletonView'
 
 
