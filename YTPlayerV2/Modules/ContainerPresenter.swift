@@ -33,7 +33,7 @@ class ContainerPresenter: ContainerViewProtocol {
             .subscribe { playlists in
                 self.playlistsID = playlists
                 self.view?.setPlaylistsUD(playlists: playlists)
-                print(playlists)
+//                print(playlists)
             } onError: { error in
                 print(error)
             }

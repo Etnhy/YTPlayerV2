@@ -175,8 +175,10 @@
                     <connections>
                         <outlet property="carouselCollectionView" destination="l19-pV-3u6" id="OgL-BG-4rW"/>
                         <outlet property="musicPlaylistCollectionView" destination="7mz-tP-fQp" id="Yvx-5o-J8A"/>
+                        <outlet property="musicPlaylistLabel" destination="pNy-hG-egQ" id="GsV-he-gSm"/>
                         <outlet property="pageControl" destination="PS9-A8-azz" id="POr-Ed-Agw"/>
                         <outlet property="videoPlaylistCollectionView" destination="xAp-Xh-iui" id="CkC-u9-AnC"/>
+                        <outlet property="videoPlaylistLabel" destination="8Q2-S9-qq8" id="smQ-Kl-Cd8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

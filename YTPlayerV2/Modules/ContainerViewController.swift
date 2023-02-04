@@ -19,6 +19,9 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
 
 
+    @IBOutlet weak var musicPlaylistLabel: UILabel!
+    @IBOutlet weak var videoPlaylistLabel: UILabel!
+    
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
 
     
@@ -185,6 +188,9 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 extension ContainerViewController: ContainerProtocol {
     func setPlaylistsUD(playlists: PlaylistsList) {
         self.playlistsIDs = playlists
+        print(self.playlistsIDs)
+        self.musicPlaylistLabel.text = playlists.items[0].snippet.title
+        self.videoPlaylistLabel.text = playlists.items[1].snippet.title
             }
     
     
