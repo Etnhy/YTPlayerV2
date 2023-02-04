@@ -11,6 +11,8 @@ import RxSwift
 class ContainerPresenter: ContainerViewProtocol {
 
     
+
+    
     var playlistsID: PlaylistsList?
 
     weak var view: ContainerProtocol?
@@ -20,7 +22,8 @@ class ContainerPresenter: ContainerViewProtocol {
     required init(view: ContainerProtocol, network: Network) {
         self.view = view
         self.network = network
-        getPlaylists()
+//        getPlaylists()
+        getMusicPlaylist(playlistID: "PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG")
     }
     
     
@@ -36,5 +39,16 @@ class ContainerPresenter: ContainerViewProtocol {
             .disposed(by: dispose)
     }
     
+    func getMusicPlaylist(playlistID: String) {
+        //PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG
+        network.getPlaylistItems(playlistId: playlistID)
+            .observe(on: MainScheduler.instance)
+            .subscribe { playlistItems in
+                print(playlistItems)
+            } onError: { error in
+                print(error)
+            }
+            .disposed(by: dispose)
+    }
     
 }

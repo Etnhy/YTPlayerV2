@@ -14,4 +14,5 @@ protocol ContainerViewProtocol: AnyObject  {
     init(view:ContainerProtocol,network: Network)
     var playlistsID: PlaylistsList? {get set}
     func getPlaylists()
+    func getMusicPlaylist(playlistID: String)
 }

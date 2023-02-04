@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class CarouselCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "CarouselCollectionViewCell"
@@ -18,6 +19,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         settings()
+        self.authorImageView.isSkeletonable = true
     }
     fileprivate func settings () {
         authorImageView.layer.cornerRadius = 8

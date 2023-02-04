@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
  //MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
 class ContainerViewController: UIViewController {
@@ -37,7 +38,6 @@ class ContainerViewController: UIViewController {
         setupCVs()
         registerCell()
         setupYTPlayer()
-        
 
     }
     
@@ -93,7 +93,16 @@ class ContainerViewController: UIViewController {
     }
 }
 
-extension ContainerViewController: UICollectionViewDataSource {
+extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        switch skeletonView {
+        case carouselCollectionView: return CarouselCollectionViewCell.reuseIdentifier
+        default: return "cell"
+            
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case carouselCollectionView     : return 4
@@ -176,9 +185,7 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 extension ContainerViewController: ContainerProtocol {
     func setPlaylistsUD(playlists: PlaylistsList) {
         self.playlistsIDs = playlists
-        
-        print(self.playlistsIDs)
-    }
+            }
     
     
 }

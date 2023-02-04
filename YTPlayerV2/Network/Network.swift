@@ -11,17 +11,21 @@ import RxSwift
 
 ///https://www.googleapis.com/youtube/v3
 //  'https://youtube.googleapis.com/youtube/v3/playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=[YOUR_API_KEY]' \
-
+// https://youtube.googleapis.com/youtube/v3/playlistItems?maxResults=10&playlistId=PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG&key=AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
 
 class Network {
     static let shared = Network()
     
     func getPlaylists () -> Observable<PlaylistsList> {
         let url = "\(Net.api_youtube)playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
+        print(url)
        return requestRx(url)
     }
     
-
+    func getPlaylistItems (playlistId: String) -> Observable<PlaylistItems> {
+        let url = "\(Net.api_youtube)playlistItems?maxResults=10&playlistId=\(playlistId)&key=\(Net.apiKey)"
+        return requestRx(url)
+    }
     
     fileprivate func requestRx<T:Codable>(_ urlConvertible:String) -> Observable<T>{
         return Observable<T>.create { observer  in
