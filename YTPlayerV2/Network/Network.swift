@@ -17,13 +17,15 @@ class Network {
     static let shared = Network()
     
     func getPlaylists () -> Observable<PlaylistsList> {
-        let url = "\(Net.api_youtube)playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
+        let url = "\(Net.api_youtube)playlists?part=snippet&channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
         print(url)
        return requestRx(url)
     }
     
     func getPlaylistItems (playlistId: String) -> Observable<PlaylistItems> {
         let url = "\(Net.api_youtube)playlistItems?maxResults=10&playlistId=\(playlistId)&key=\(Net.apiKey)"
+        print(url)
+
         return requestRx(url)
     }
     

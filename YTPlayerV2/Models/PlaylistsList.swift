@@ -8,19 +8,46 @@
 import Foundation
 
 
-// MARK: - PlaylistsList
+
+//MARK: -  Playlist List
 struct PlaylistsList: Codable {
-    let kind, etag: String
-    let pageInfo: PageInfo
-    let items: [Playlist]
+    let kind,etag: String
+    let items: [Items]
 }
-
-// MARK: - Playlist
-struct Playlist: Codable {
+ //MARK: - Items
+struct Items: Codable {
     let kind, etag, id: String
+    let snippet: Snippet
+    
 }
-
-// MARK: - PageInfo
-struct PageInfo: Codable {
-    let totalResults, resultsPerPage: Int
+//MARK: - Snippet
+struct Snippet: Codable {
+    let publishedAt: String
+    let channelId: String
+    let title : String
+    let description: String?
+    let thumbnails: Thumbnails
+}
+//MARK: - Thumbnails
+struct Thumbnails: Codable {
+    let thumbnailsDefault: Default
+    let medium: Medium
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case thumbnailsDefault = "default"
+        case medium
+    }
+}
+//MARK: - Default
+struct Default: Codable {
+    let url: String
+    let width: Int
+    let height: Int
+}
+//MARK: - Medium
+struct Medium: Codable {
+    let url: String
+    let width: Int
+    let height: Int
 }
