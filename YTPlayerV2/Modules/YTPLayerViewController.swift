@@ -18,7 +18,6 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var backwardButton: UIButton!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
-    
     @IBOutlet weak var showHideButton: UIButton!
     
      var isPlayed: Bool = false
