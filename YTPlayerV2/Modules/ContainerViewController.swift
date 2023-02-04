@@ -31,8 +31,6 @@ class ContainerViewController: UIViewController {
         setupCVs()
         registerCell()
         setupYTPlayer()
-
-
     }
     
     
