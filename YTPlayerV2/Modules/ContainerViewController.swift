@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+ //MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
 class ContainerViewController: UIViewController {
     static let identifier = "ContainerViewController"
     
@@ -15,32 +16,37 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var musicPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
-    var playerShow: Bool = false
-    
+
+    var presenter : ContainerViewProtocol?
+    var network = Network()
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
 
+    var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCVs()
         registerCell()
         setupYTPlayer()
+        
+
     }
     
-    
     fileprivate func setupCVs() {
+        self.presenter = ContainerPresenter(view: self, network: network)
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
         
         
     }
+    
     fileprivate func setupYTPlayer() {
         self.addChild(playerViewController)
         self.view.addSubview(playerViewController.view)
@@ -66,7 +72,6 @@ class ContainerViewController: UIViewController {
     //MARK: - actions
     @objc private func showHidePlayerAction() {
         playerShow.toggle()
-        
         UIView.animate(withDuration: 0.7, delay: 0.05, options: [.curveEaseOut]) { [self] in
             switch playerShow {
             case false:
@@ -83,7 +88,6 @@ class ContainerViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
 }
 
 extension ContainerViewController: UICollectionViewDataSource {
@@ -110,16 +114,16 @@ extension ContainerViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             return cell
+            
         case videoPlaylistCollectionView :
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.reuseIdentifier, for: indexPath) as? VideoCollectionViewCell else {
                 return UICollectionViewCell()
             }
             return cell
-            
         default: return UICollectionViewCell()
         }
-        
     }
+    
     fileprivate func getCurrentPage() -> Int {
         let visibleRect = CGRect(origin: carouselCollectionView.contentOffset, size: carouselCollectionView.bounds.size)
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
@@ -141,6 +145,7 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 
         case musicPlaylistCollectionView:
             return CGSize(width: 170, height: self.musicPlaylistCollectionView.frame.height)
+            
         case videoPlaylistCollectionView :
             return CGSize(width: 200, height: self.videoPlaylistCollectionView.frame.height)
 
@@ -165,3 +170,10 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
+extension ContainerViewController: ContainerProtocol {
+    func getIDs() {
+        print("ewqwe")
+    }
+    
+    
+}
