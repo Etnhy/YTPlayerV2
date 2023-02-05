@@ -46,14 +46,6 @@ class ContainerPresenter: ContainerViewProtocol {
                 print(error)
             }
         }
-//        network.getPlaylistItems(playlistId: playlistID)
-//            .observe(on: MainScheduler.instance)
-//            .subscribe { playlistItems in
-//                print(playlistItems)
-//            } onError: { error in
-//                print(error)
-//            }
-//            .disposed(by: dispose)
     }
     
 }

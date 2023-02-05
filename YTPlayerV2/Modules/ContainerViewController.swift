@@ -189,7 +189,7 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 extension ContainerViewController: ContainerProtocol {
     func setPlaylistsUD(playlists: PlaylistsList) {
         self.playlistsIDs = playlists
-        print(self.playlistsIDs)
+//        print(self.playlistsIDs)
         self.musicPlaylistLabel.text = playlists.items[0].snippet.title
         self.videoPlaylistLabel.text = playlists.items[1].snippet.title
             }
