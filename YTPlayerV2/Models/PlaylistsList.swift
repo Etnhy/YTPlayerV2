@@ -27,6 +27,7 @@ struct Snippet: Codable {
     let title : String
     let description: String?
     let thumbnails: Thumbnails
+    let channelTitle: String
 }
 //MARK: - Thumbnails
 struct Thumbnails: Codable {

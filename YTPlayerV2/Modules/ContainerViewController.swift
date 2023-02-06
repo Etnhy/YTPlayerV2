@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SkeletonView
 
- //MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
+//MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
 class ContainerViewController: UIViewController {
     static let identifier = "ContainerViewController"
     
@@ -17,13 +17,13 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var musicPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var videoPlaylistCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-
-
+    
+    
     @IBOutlet weak var musicPlaylistLabel: UILabel!
     @IBOutlet weak var videoPlaylistLabel: UILabel!
     
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
-
+    
     
     var presenter : ContainerViewProtocol?
     var network = Network()
@@ -42,7 +42,7 @@ class ContainerViewController: UIViewController {
         registerCell()
         setupYTPlayer()
     }
-
+    
     
     fileprivate func setupCVs() {
         self.view.backgroundColor = AppColors.mainAppColor
@@ -51,6 +51,15 @@ class ContainerViewController: UIViewController {
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
         
+        
+    }
+    
+     //MARK: -  Configure vc
+    fileprivate func configureVC(model:PlaylistsList?) {
+        guard let model = model else { return }
+        self.musicPlaylistLabel.text = model.items[0].snippet.title
+        self.videoPlaylistLabel.text = model.items[1].snippet.title
+        self.title = model.items[0].snippet.channelTitle
         
     }
     
@@ -150,7 +159,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
     }
 }
 
- //MARK: - (extension) UICollectionViewDelegateFlowLayout
+//MARK: - (extension) UICollectionViewDelegateFlowLayout
 extension ContainerViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -158,13 +167,13 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case carouselCollectionView:
             return CGSize(width: self.carouselCollectionView.frame.width, height: self.carouselCollectionView.frame.height)
-
+            
         case musicPlaylistCollectionView:
             return CGSize(width: 170, height: self.musicPlaylistCollectionView.frame.height)
             
         case videoPlaylistCollectionView :
             return CGSize(width: 200, height: self.videoPlaylistCollectionView.frame.height)
-
+            
         default: return CGSize(width: 100, height: 100)
             
         }
@@ -182,17 +191,19 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         currentPage = getCurrentPage()
     }
-
+    
 }
 
 
 extension ContainerViewController: ContainerProtocol {
     func setPlaylistsUD(playlists: PlaylistsList) {
         self.playlistsIDs = playlists
-//        print(self.playlistsIDs)
-        self.musicPlaylistLabel.text = playlists.items[0].snippet.title
-        self.videoPlaylistLabel.text = playlists.items[1].snippet.title
-            }
+        print(self.playlistsIDs)
+        DispatchQueue.main.async {
+            self.configureVC(model: playlists)
+            
+        }
+    }
     
     
 }
