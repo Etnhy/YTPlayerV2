@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 
+// https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=UCUM2Q6aQXYex5y36sBej0Ng&key=[YOUR_API_KEY]
 
 enum YoutubeAPI {
     case getTopChannels(channelId: String)
@@ -26,7 +27,6 @@ extension YoutubeAPI: TargetType {
         case .getPlaylists:
             return "playlists?part=snippet&channelId=\(Net.mainProfile)&key=\(Net.apiKey)"
             
-            
         case .getPlaylistItems(playlistId: let playlistId):
             return "playlistItems?part=snippet&part=id&maxResults=10&playlistId=\(playlistId)&key=\(Net.apiKey)"
             
@@ -40,7 +40,6 @@ extension YoutubeAPI: TargetType {
     }
     
     var task: Moya.Task {
-//        print("\(baseURL)\(path)")
         return .requestPlain
     }
     

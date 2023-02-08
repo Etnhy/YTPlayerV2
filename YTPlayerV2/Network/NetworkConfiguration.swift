@@ -26,7 +26,7 @@ struct Net {
     }()
     
     static let mainProfile = "UCyxvZQw2Os4LvdPkNqSB8nw"
-    static let channelsIDs = ["UCUM2Q6aQXYex5y36sBej0Ng","minuitmachine",
-                              "pleasuresymbols2594","LadytronMusic"]
+    static let channelsIDs = ["UCUM2Q6aQXYex5y36sBej0Ng","UCZA_Whol1-6skpvvOp6M8Eg",
+                              "UClZKHOazc0aciWXqxvfyq4g","UCY6iwVgOWuB58sj8zwDbpGQ"]
     
 }
