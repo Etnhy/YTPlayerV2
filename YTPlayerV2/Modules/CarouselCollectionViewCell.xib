@@ -17,8 +17,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="210"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-ey-qgv">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-ey-qgv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="210"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.78823529410000004" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
@@ -26,12 +27,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7h-2d-f55">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7h-2d-f55">
                         <rect key="frame" x="30" y="24" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="FvA-ej-7vd"/>
-                            <constraint firstAttribute="width" constant="50" id="whl-tg-RzH"/>
-                        </constraints>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" cornerStyle="capsule">
                             <backgroundConfiguration key="background">
@@ -41,45 +39,29 @@
                             <color key="baseForegroundColor" systemColor="systemMintColor"/>
                         </buttonConfiguration>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebanon Hanover" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCZ-Es-cd4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lebanon Hanover" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCZ-Es-cd4">
                         <rect key="frame" x="16" y="98" width="200" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="200" id="QTK-w4-lGM"/>
-                            <constraint firstAttribute="height" constant="30" id="gUU-Jj-gc9"/>
-                        </constraints>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="useFontLineHeight" value="NO"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subscribers - count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYG-VG-1Tp">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subscribers - count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYG-VG-1Tp">
                         <rect key="frame" x="16" y="136" width="180" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="22" id="AX0-xZ-x3p"/>
-                            <constraint firstAttribute="width" constant="180" id="spS-Ax-EJ6"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="-2" height="-3"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="Vhz-ey-qgv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5Ib-Rt-H7o"/>
-                <constraint firstItem="aCZ-Es-cd4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="GAj-pY-927"/>
-                <constraint firstItem="OYG-VG-1Tp" firstAttribute="top" secondItem="aCZ-Es-cd4" secondAttribute="bottom" constant="8" id="LGa-3i-kK1"/>
-                <constraint firstAttribute="bottom" secondItem="Vhz-ey-qgv" secondAttribute="bottom" id="MDB-cG-RR1"/>
-                <constraint firstItem="Vhz-ey-qgv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nob-ad-LYv"/>
-                <constraint firstItem="OYG-VG-1Tp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Oyn-e2-pWb"/>
-                <constraint firstItem="B7h-2d-f55" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="Yfo-1L-HvS"/>
-                <constraint firstItem="aCZ-Es-cd4" firstAttribute="top" secondItem="B7h-2d-f55" secondAttribute="bottom" constant="24" id="bpQ-tt-Tbb"/>
-                <constraint firstItem="B7h-2d-f55" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="m8Y-wr-SAx"/>
-                <constraint firstAttribute="trailing" secondItem="Vhz-ey-qgv" secondAttribute="trailing" id="pDP-lD-I0f"/>
-            </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
@@ -94,6 +76,9 @@
     </objects>
     <resources>
         <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
