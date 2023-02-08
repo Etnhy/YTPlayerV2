@@ -24,4 +24,9 @@ struct Net {
         }
         return "\(key)"
     }()
+    
+    static let mainProfile = "UCyxvZQw2Os4LvdPkNqSB8nw"
+    static let channelsIDs = ["UCUM2Q6aQXYex5y36sBej0Ng","minuitmachine",
+                              "pleasuresymbols2594","LadytronMusic"]
+    
 }
