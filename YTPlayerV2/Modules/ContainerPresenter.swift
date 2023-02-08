@@ -28,7 +28,7 @@ class ContainerPresenter: ContainerViewProtocol {
     required init(view: ContainerProtocol) {
         self.view = view
         
-//        getPlaylists()
+        getPlaylists()
         getTopChannels(arrayId: Net.channelsIDs)
     }
     
@@ -66,7 +66,7 @@ class ContainerPresenter: ContainerViewProtocol {
     }
     
     func getTopChannels(arrayId: [String]) {
-        var channelsData = [TopChannelsModel]()
+        var channelsData = [ChannelsItems]()
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             for id in arrayId {
                 self.provider.request(.getTopChannels(channelId: id)) { result in
@@ -74,12 +74,9 @@ class ContainerPresenter: ContainerViewProtocol {
                     case .success(let response):
                         let json = try? response.map(TopChannelsModel.self)
                         guard let json = json else { return }
-//                        print(json)
-        //                self.view?.setMusicPlaylistItem(item: json)
-
-                        channelsData.append(json)
+                        channelsData.append(contentsOf: json.items)
+                        
                         if channelsData.count == Net.channelsIDs.count {
-//                            print(channelsData.count)
                             self.view?.setTopChannels(channels: channelsData)
 
                         }

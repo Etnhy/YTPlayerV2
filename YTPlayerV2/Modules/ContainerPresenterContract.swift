@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ContainerProtocol: AnyObject {
-    func setTopChannels(channels: [TopChannelsModel])
+    func setTopChannels(channels: [ChannelsItems])
     func setPlaylistsUD(playlists: PlaylistsList?)
     func setMusicPlaylistItem(item: PlaylistItems?)
     

@@ -28,7 +28,8 @@ class ContainerViewController: UIViewController {
     var presenter : ContainerViewProtocol?
     var musicPlaylist: PlaylistItems?
     var playlistsIDs: PlaylistsList?
-    var topChannelsModels: [TopChannelsModel]?
+    
+    var topChannelsModels: [ChannelsItems]?
     
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
@@ -122,8 +123,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case carouselCollectionView     : return 4
-            
+        case carouselCollectionView     : return topChannelsModels?.count ?? 0
             
         case musicPlaylistCollectionView:
             return musicPlaylist?.items.count ?? 0
@@ -140,6 +140,10 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         case carouselCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.reuseIdentifier, for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
+            }
+            if let topChannelsModels = topChannelsModels {
+                cell.configureCarouselCell(model: topChannelsModels[indexPath.item])
+
             }
             return cell
             
@@ -178,7 +182,7 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case carouselCollectionView:
-            return CGSize(width: self.carouselCollectionView.frame.width, height: self.carouselCollectionView.frame.height)
+            return CGSize(width: self.carouselCollectionView.frame.width - 4, height: self.carouselCollectionView.frame.height - 4)
             
         case musicPlaylistCollectionView:
             return CGSize(width: 170, height: self.musicPlaylistCollectionView.frame.height)
@@ -208,9 +212,10 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 
 
 extension ContainerViewController: ContainerProtocol {
-    func setTopChannels(channels: [TopChannelsModel]) {
+    func setTopChannels(channels: [ChannelsItems]) {
         print(channels.count)
-//        self.topChannelsModels = channels
+        self.topChannelsModels = channels
+        self.carouselCollectionView.reloadData()
     }
     
     func setMusicPlaylistItem(item: PlaylistItems?) {
