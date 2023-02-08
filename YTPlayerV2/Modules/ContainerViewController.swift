@@ -36,6 +36,9 @@ class ContainerViewController: UIViewController {
         }
     }
     
+    
+    var musicPlaylist: PlaylistItems?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCVs()
@@ -119,7 +122,12 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case carouselCollectionView     : return 4
-        case musicPlaylistCollectionView: return 10
+            
+            
+        case musicPlaylistCollectionView:
+            return musicPlaylist?.items.count ?? 0
+            
+            
         case videoPlaylistCollectionView: return 10
         default : return 0
             
@@ -137,6 +145,9 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         case musicPlaylistCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MusicCollectionViewCell.reuseIdentifier, for: indexPath) as? MusicCollectionViewCell else {
                 return UICollectionViewCell()
+            }
+            if let musicPlaylist = musicPlaylist {
+                cell.configure(with: musicPlaylist.items[indexPath.item])
             }
             return cell
             
@@ -196,13 +207,15 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 
 
 extension ContainerViewController: ContainerProtocol {
-    func setPlaylistsUD(playlists: PlaylistsList) {
+    func setMusicPlaylistItem(item: PlaylistItems?) {
+        self.musicPlaylist = item
+        print(item)
+        self.musicPlaylistCollectionView.reloadData()
+    }
+    
+    func setPlaylistsUD(playlists: PlaylistsList?) {
         self.playlistsIDs = playlists
-        print(self.playlistsIDs)
-        DispatchQueue.main.async {
             self.configureVC(model: playlists)
-            
-        }
     }
     
     
