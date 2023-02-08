@@ -26,8 +26,10 @@ class ContainerViewController: UIViewController {
     
     
     var presenter : ContainerViewProtocol?
-//    var network = Network()
+    var musicPlaylist: PlaylistItems?
     var playlistsIDs: PlaylistsList?
+    var topChannelsModels: [TopChannelsModel]?
+    
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -37,7 +39,6 @@ class ContainerViewController: UIViewController {
     }
     
     
-    var musicPlaylist: PlaylistItems?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,17 +208,19 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 
 
 extension ContainerViewController: ContainerProtocol {
+    func setTopChannels(channels: [TopChannelsModel]) {
+        print(channels.count)
+//        self.topChannelsModels = channels
+    }
+    
     func setMusicPlaylistItem(item: PlaylistItems?) {
         self.musicPlaylist = item
-//        print(item)
         self.musicPlaylistCollectionView.reloadData()
     }
     
     func setPlaylistsUD(playlists: PlaylistsList?) {
-//        print(playlists)
         self.playlistsIDs = playlists
-        
-            self.configureVC(model: playlists)
+        self.configureVC(model: playlists)
     }
     
     
