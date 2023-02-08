@@ -26,7 +26,7 @@ class ContainerViewController: UIViewController {
     
     
     var presenter : ContainerViewProtocol?
-    var network = Network()
+//    var network = Network()
     var playlistsIDs: PlaylistsList?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
@@ -49,7 +49,7 @@ class ContainerViewController: UIViewController {
     
     fileprivate func setupCVs() {
         self.view.backgroundColor = AppColors.mainAppColor
-        self.presenter = ContainerPresenter(view: self, network: network)
+        self.presenter = ContainerPresenter(view: self)
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
@@ -209,12 +209,14 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 extension ContainerViewController: ContainerProtocol {
     func setMusicPlaylistItem(item: PlaylistItems?) {
         self.musicPlaylist = item
-        print(item)
+//        print(item)
         self.musicPlaylistCollectionView.reloadData()
     }
     
     func setPlaylistsUD(playlists: PlaylistsList?) {
+//        print(playlists)
         self.playlistsIDs = playlists
+        
             self.configureVC(model: playlists)
     }
     

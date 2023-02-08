@@ -12,9 +12,9 @@ protocol ContainerProtocol: AnyObject {
     func setMusicPlaylistItem(item: PlaylistItems?)
 }
 protocol ContainerViewProtocol: AnyObject  {
-    init(view:ContainerProtocol,network: Network)
+    init(view:ContainerProtocol)
     var playlistList: PlaylistsList? {get set}
     func getPlaylists()
     func getMusicPlaylist(playlistID: [String])
-    
+    func getTopChannels(arrayId: [String])
 }
