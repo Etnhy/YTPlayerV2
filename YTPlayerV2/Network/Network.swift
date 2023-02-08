@@ -6,49 +6,46 @@
 //
 
 import Foundation
-import Alamofire
+import Moya
 
-///https://www.googleapis.com/youtube/v3
-//  'https://youtube.googleapis.com/youtube/v3/playlists?channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=[YOUR_API_KEY]' \
-// https://youtube.googleapis.com/youtube/v3/playlistItems?maxResults=10&playlistId=PLNZta_SFvNjES8JspnOD2PIYV9X9CetcG&key=AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
 
-class Network {
-    static let shared = Network()
-
-        func getPlaylists(completion: @escaping (Result<PlaylistsList,AFError>) ->()) {
-            let url = "\(Net.api_youtube)playlists?part=snippet&channelId=UCyxvZQw2Os4LvdPkNqSB8nw&key=\(Net.apiKey)"
-            downloadJson(url: url, completion: completion)
-        }
+enum YoutubeAPI {
+    case getTopChannels(channelId: String)
+    case getPlaylists
+    case getPlaylistItems(playlistId: String)
     
-    func getPlaylistItems(playlistId: String,completion: @escaping (Result<PlaylistItems,AFError>) ->()) {
-        let url = "\(Net.api_youtube)playlistItems?part=snippet&part=id&maxResults=10&playlistId=\(playlistId)&key=\(Net.apiKey)"
-        print( url)
-        downloadJson(url: url, completion: completion)
-    }
-    
-    
-    /*
-     
-     statistics videos
-     https://youtube.googleapis.com/youtube/v3/videos?part=statistics&part=snippet&id=RgrVS49pras&key=[YOUR_API_KEY]
-     */
-    
-    
-    
-    
-    
-        fileprivate func downloadJson<T:Decodable>(url: String, completion:@escaping(Result<T,AFError>)-> Void) {
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: {
-                JSONResponse in
-                JSONResponse.timeoutInterval = 10
-            }).validate(statusCode: 200..<201).responseDecodable(of: T.self) { responseDecodable in
-                switch responseDecodable.result {
-                case .success(let response):
-                    completion(.success(response))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-        }
 }
 
+extension YoutubeAPI: TargetType {
+    var baseURL: URL {
+        return URL(string: "\(Net.api_youtube)")!
+    }
+
+    var path: String {
+        switch self {
+        case .getPlaylists:
+            return "playlists?part=snippet&channelId=\(Net.mainProfile)&key=\(Net.apiKey)"
+            
+            
+        case .getPlaylistItems(playlistId: let playlistId):
+            return "playlistItems?part=snippet&part=id&maxResults=10&playlistId=\(playlistId)&key=\(Net.apiKey)"
+            
+        case .getTopChannels(let channelId):
+            return "channels?part=statistics&part=snippet&id=\(channelId)&key=\(Net.apiKey)"
+        }
+    }
+    
+    var method: Moya.Method {
+        return .get
+    }
+    
+    var task: Moya.Task {
+//        print("\(baseURL)\(path)")
+        return .requestPlain
+    }
+    
+    var headers: [String : String]? {
+        nil
+    }
+    
+}
