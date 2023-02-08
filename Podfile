@@ -11,6 +11,7 @@ target 'YTPlayerV2' do
 	pod 'AlamofireImage'
 	pod "youtube-ios-player-helper"
 	pod 'SkeletonView'
+	pod 'Moya', '~> 15.0'
 
 
 

@@ -32,6 +32,7 @@
 		7A3CDF8F298EAAB700B5A70C /* ContainerPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF8E298EAAB700B5A70C /* ContainerPresenterContract.swift */; };
 		7A3CDF91298EAC7E00B5A70C /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF90298EAC7E00B5A70C /* ContainerPresenter.swift */; };
 		7ABBBDD7298EBECB004970F3 /* PlaylistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */; };
+		7AE955452991625F00F7DFBF /* MusicPlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */; };
 		9E5D78031F61F4A4592CA289 /* Pods_YTPlayerV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4ED0CAF69598BE17A7F3E7C /* Pods_YTPlayerV2Tests.framework */; };
 		A90D4A6148FAF74F5C1CA190 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB8FA82AE32E9114305BE3A /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */; };
 		D76EBF65A6408F08FE3F1915 /* Pods_YTPlayerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DAEE9322870A554C3E28AC /* Pods_YTPlayerV2.framework */; };
@@ -88,6 +89,7 @@
 		7A3CDF8E298EAAB700B5A70C /* ContainerPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterContract.swift; sourceTree = "<group>"; };
 		7A3CDF90298EAC7E00B5A70C /* ContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenter.swift; sourceTree = "<group>"; };
 		7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItems.swift; sourceTree = "<group>"; };
+		7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlaylistModel.swift; sourceTree = "<group>"; };
 		9CB8FA82AE32E9114305BE3A /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2_YTPlayerV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED0CAF69598BE17A7F3E7C /* Pods_YTPlayerV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E4BC31F43B49AD2AF75215 /* Pods-YTPlayerV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2Tests.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2Tests/Pods-YTPlayerV2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				7A3CDF8B298EA6A600B5A70C /* PlaylistsList.swift */,
 				7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */,
+				7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				7A2C9AFA298D87EA002C71D2 /* YTPLayerViewController.swift in Sources */,
 				7A2C9AF6298D2F5A002C71D2 /* VideoCollectionViewCell.swift in Sources */,
 				7A3CDF87298E9E4E00B5A70C /* Network.swift in Sources */,
+				7AE955452991625F00F7DFBF /* MusicPlaylistModel.swift in Sources */,
 				7A2C9AEB298D2363002C71D2 /* CarouselCollectionViewCell.swift in Sources */,
 				7A2C9AF1298D2633002C71D2 /* MusicCollectionViewCell.swift in Sources */,
 				7A3CDF8C298EA6A600B5A70C /* PlaylistsList.swift in Sources */,
