@@ -7,42 +7,28 @@
 
 import Foundation
 
-
-// MARK: - PlaylistItemsThumbnails
+ //MARK: - Thumbnails
 struct Thumbnails: Codable {
-    let thumbnailsDefault, medium, high: PlaylistItemsDefault
-    let standard, maxres: PlaylistItemsDefault?
-
+    let defaultThumbnails : DefaultThumbnails
+    let high: HighThumbnails
+    
     enum CodingKeys: String, CodingKey {
-        case thumbnailsDefault
-        case medium, high, standard, maxres
+        case defaultThumbnails = "default"
+        case high
     }
 }
 
-// MARK: - PlaylistItemsDefault
-struct PlaylistItemsDefault: Codable {
+ //MARK: - HighTopChannelThumbnails
+struct HighThumbnails: Codable {
     let url: String
-    let width, height: Int
+    let width: Int
+    let height: Int
 }
-//struct Thumbnails: Codable {
-//
-//    let standard: ThumbnailsStandart
-//    let maxres: ThumbnailsMaxres
-//
-//    enum CodingKeys: String, CodingKey {
-//        case standard, maxres
-//    }
-//
-//}
-//struct ThumbnailsStandart: Codable {
-//    let url: String
-//    let width: Int
-//    let height: Int
-//}
-//
-//struct ThumbnailsMaxres: Codable {
-//    let url: String
-//    let width: Int
-//    let height: Int
-//}
+
+ //MARK: - DefaultChannelThumbnails
+struct DefaultThumbnails: Codable {
+    let url: String
+    let width: Int
+    let height: Int
+}
 

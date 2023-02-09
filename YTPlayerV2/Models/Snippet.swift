@@ -10,7 +10,6 @@ import Foundation
 struct Snippet: Codable {
     let publishedAt: String
     let title: String
-//    let thumbnails: Thumbnails
-
+    let thumbnails: Thumbnails
     let resourceId: ResourceId?
 }
