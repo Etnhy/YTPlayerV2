@@ -33,6 +33,8 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     fileprivate func settings () {
         self.authorImageView.backgroundColor = AppColors.backViewColor
         authorImageView.layer.cornerRadius = 8
+        self.subscribersCountLabel.layer.cornerRadius = 10
+        
         self.layer.cornerRadius = 8
 
     }

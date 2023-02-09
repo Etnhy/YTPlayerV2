@@ -28,6 +28,8 @@ class MusicCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 0.2
         self.layer.borderColor = UIColor.blue.cgColor
+        musicSongName.adjustsFontSizeToFitWidth = true
+        musicSongName.minimumScaleFactor = 0.7
     }
     
     public func configure(with model: Item) {
@@ -38,9 +40,6 @@ class MusicCollectionViewCell: UICollectionViewCell {
 
         
         musicImageView.af.setImage(withURL: url)
-//        af.setImage(withURL: model.snippet.thumbnails.defaultThumbnails)
-        
-        //        self.bannerImage.af.setImage(withURL: url)
 
         
     }
