@@ -24,6 +24,8 @@ class ContainerViewController: UIViewController {
     
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
     
+    var presenter: ContainerPresenter?
+    var playlists: ChannelsPlaylists?
     
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
@@ -44,6 +46,7 @@ class ContainerViewController: UIViewController {
     
     
     fileprivate func setupCVs() {
+        self.presenter = ContainerPresenter(view: self)
         self.view.backgroundColor = AppColors.mainAppColor
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear
@@ -96,7 +99,25 @@ class ContainerViewController: UIViewController {
         }
     }
 }
+ //MARK: - Container Protocol
+extension ContainerViewController: ContainerProtocol {
+    func setPlaylistsNames(playlists: ChannelsPlaylists) {
+        self.playlists = playlists
+//        print(self.playlists)
+    }
 
+    
+    func setCarouselCollectionView() {
+        print("q")
+    }
+    
+
+    func showError(error: String) {
+        print(error)
+    }
+    
+}
+ //MARK: - UICollectionViewDataSource, SkeletonCollectionViewDataSource
 extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
         switch skeletonView {
