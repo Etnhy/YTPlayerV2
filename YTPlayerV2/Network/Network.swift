@@ -8,17 +8,6 @@
 import Foundation
 import Moya
 
-// https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=UCUM2Q6aQXYex5y36sBej0Ng&key=[YOUR_API_KEY]
-
-
-/*
- curl \
-   'https://youtube.googleapis.com/youtube/v3/videos?part=statistics&part=snippet&id=gWCYyLiF45U&key=[YOUR_API_KEY]' \
-   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
-   --header 'Accept: application/json' \
-   --compressed
-
- */
 
 enum YoutubeAPI {
     case getTopChannels(channelId: String)
@@ -56,6 +45,7 @@ extension YoutubeAPI: TargetType {
     }
     
     var task: Moya.Task {
+        print("\(baseURL)\(path)")
         return .requestPlain
     }
     
