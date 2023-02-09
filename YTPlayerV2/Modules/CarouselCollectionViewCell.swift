@@ -38,14 +38,6 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 8
 
     }
-    
-    public func configureCarouselCell(model: ChannelsItems) {
-        authorNameLabel.attributedText = NSAttributedString(string: model.snippet.title, attributes: strokeTextAttributes)
-        subscribersCountLabel.text = "Subscribers: \(model.statistics.subscriberCount)"
-        let url = URL(string: "\(model.snippet.thumbnails.high.url)")
-        guard let url = url else { return }
-        authorImageView.af.setImage(withURL: url)
-        
-    }
+
 
 }

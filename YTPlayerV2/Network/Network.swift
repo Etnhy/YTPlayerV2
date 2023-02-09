@@ -10,10 +10,22 @@ import Moya
 
 // https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=UCUM2Q6aQXYex5y36sBej0Ng&key=[YOUR_API_KEY]
 
+
+/*
+ curl \
+   'https://youtube.googleapis.com/youtube/v3/videos?part=statistics&part=snippet&id=gWCYyLiF45U&key=[YOUR_API_KEY]' \
+   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+   --header 'Accept: application/json' \
+   --compressed
+
+ */
+
 enum YoutubeAPI {
     case getTopChannels(channelId: String)
     case getPlaylists
     case getPlaylistItems(playlistId: String)
+    
+    case getVideoItems(videoId: String)
     
 }
 
@@ -32,7 +44,11 @@ extension YoutubeAPI: TargetType {
             
         case .getTopChannels(let channelId):
             return "channels?part=statistics&part=snippet&id=\(channelId)&key=\(Net.apiKey)"
+            
+        case .getVideoItems(videoId: let id):
+            return "videos?part=statistics&part=snippet&id=\(id)&key=\(Net.apiKey)"
         }
+        
     }
     
     var method: Moya.Method {

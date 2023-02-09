@@ -25,12 +25,6 @@ class ContainerViewController: UIViewController {
     let playerViewController = UIStoryboard(name: YTPLayerViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: YTPLayerViewController.identifier) as! YTPLayerViewController
     
     
-    var presenter : ContainerViewProtocol?
-    var musicPlaylist: PlaylistItems?
-    var playlistsIDs: PlaylistsList?
-    
-    var topChannelsModels: [ChannelsItems]?
-    
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -51,7 +45,6 @@ class ContainerViewController: UIViewController {
     
     fileprivate func setupCVs() {
         self.view.backgroundColor = AppColors.mainAppColor
-        self.presenter = ContainerPresenter(view: self)
         carouselCollectionView.backgroundColor = .clear
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
@@ -59,14 +52,7 @@ class ContainerViewController: UIViewController {
         
     }
     
-     //MARK: -  Configure vc
-    fileprivate func configureVC(model:PlaylistsList?) {
-        guard let model = model else { return }
-        self.musicPlaylistLabel.text = model.items[0].snippet.title
-        self.videoPlaylistLabel.text = model.items[1].snippet.title
-        self.title = model.items[0].snippet.channelTitle
-        
-    }
+
     
     fileprivate func setupYTPlayer() {
         self.addChild(playerViewController)
@@ -123,10 +109,9 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case carouselCollectionView     : return topChannelsModels?.count ?? 0
+        case carouselCollectionView     : return 4
             
-        case musicPlaylistCollectionView:
-            return musicPlaylist?.items.count ?? 0
+        case musicPlaylistCollectionView: return 10
             
             
         case videoPlaylistCollectionView: return 10
@@ -141,19 +126,14 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.reuseIdentifier, for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            if let topChannelsModels = topChannelsModels {
-                cell.configureCarouselCell(model: topChannelsModels[indexPath.item])
 
-            }
             return cell
             
         case musicPlaylistCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MusicCollectionViewCell.reuseIdentifier, for: indexPath) as? MusicCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            if let musicPlaylist = musicPlaylist {
-                cell.configure(with: musicPlaylist.items[indexPath.item])
-            }
+
             return cell
             
         case videoPlaylistCollectionView :
@@ -211,22 +191,3 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-extension ContainerViewController: ContainerProtocol {
-    func setTopChannels(channels: [ChannelsItems]) {
-        print(channels.count)
-        self.topChannelsModels = channels
-        self.carouselCollectionView.reloadData()
-    }
-    
-    func setMusicPlaylistItem(item: PlaylistItems?) {
-        self.musicPlaylist = item
-        self.musicPlaylistCollectionView.reloadData()
-    }
-    
-    func setPlaylistsUD(playlists: PlaylistsList?) {
-        self.playlistsIDs = playlists
-        self.configureVC(model: playlists)
-    }
-    
-    
-}

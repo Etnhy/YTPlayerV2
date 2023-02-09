@@ -28,12 +28,9 @@
 		7A2C9AFE298D8986002C71D2 /* YTPLayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2C9AFD298D8986002C71D2 /* YTPLayerViewController.storyboard */; };
 		7A3CDF87298E9E4E00B5A70C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF86298E9E4E00B5A70C /* Network.swift */; };
 		7A3CDF89298E9E7B00B5A70C /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF88298E9E7B00B5A70C /* NetworkConfiguration.swift */; };
-		7A3CDF8C298EA6A600B5A70C /* PlaylistsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF8B298EA6A600B5A70C /* PlaylistsList.swift */; };
 		7A3CDF8F298EAAB700B5A70C /* ContainerPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF8E298EAAB700B5A70C /* ContainerPresenterContract.swift */; };
 		7A3CDF91298EAC7E00B5A70C /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF90298EAC7E00B5A70C /* ContainerPresenter.swift */; };
-		7A5CF1C12993FCAB005D31C7 /* TopChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5CF1C02993FCAB005D31C7 /* TopChannelsModel.swift */; };
-		7ABBBDD7298EBECB004970F3 /* PlaylistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */; };
-		7AE955452991625F00F7DFBF /* MusicPlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */; };
+		7A790A342995394A00E4DBB0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A332995394A00E4DBB0 /* Array+Extension.swift */; };
 		9E5D78031F61F4A4592CA289 /* Pods_YTPlayerV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4ED0CAF69598BE17A7F3E7C /* Pods_YTPlayerV2Tests.framework */; };
 		A90D4A6148FAF74F5C1CA190 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB8FA82AE32E9114305BE3A /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */; };
 		D76EBF65A6408F08FE3F1915 /* Pods_YTPlayerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DAEE9322870A554C3E28AC /* Pods_YTPlayerV2.framework */; };
@@ -86,12 +83,9 @@
 		7A2C9AFD298D8986002C71D2 /* YTPLayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YTPLayerViewController.storyboard; sourceTree = "<group>"; };
 		7A3CDF86298E9E4E00B5A70C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7A3CDF88298E9E7B00B5A70C /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
-		7A3CDF8B298EA6A600B5A70C /* PlaylistsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsList.swift; sourceTree = "<group>"; };
 		7A3CDF8E298EAAB700B5A70C /* ContainerPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterContract.swift; sourceTree = "<group>"; };
 		7A3CDF90298EAC7E00B5A70C /* ContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenter.swift; sourceTree = "<group>"; };
-		7A5CF1C02993FCAB005D31C7 /* TopChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChannelsModel.swift; sourceTree = "<group>"; };
-		7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItems.swift; sourceTree = "<group>"; };
-		7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlaylistModel.swift; sourceTree = "<group>"; };
+		7A790A332995394A00E4DBB0 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		9CB8FA82AE32E9114305BE3A /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2_YTPlayerV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED0CAF69598BE17A7F3E7C /* Pods_YTPlayerV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E4BC31F43B49AD2AF75215 /* Pods-YTPlayerV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2Tests.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2Tests/Pods-YTPlayerV2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +196,7 @@
 		7A1D73DF29881DC7002FA5B5 /* YTPlayerV2 */ = {
 			isa = PBXGroup;
 			children = (
+				7A790A322995393A00E4DBB0 /* Extensions */,
 				7A0FBFD3298EE76D009A4A63 /* Theme */,
 				7A3CDF8A298EA69300B5A70C /* Models */,
 				7A3CDF85298E9E3F00B5A70C /* Network */,
@@ -290,10 +285,6 @@
 		7A3CDF8A298EA69300B5A70C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7A3CDF8B298EA6A600B5A70C /* PlaylistsList.swift */,
-				7ABBBDD6298EBECB004970F3 /* PlaylistItems.swift */,
-				7AE955442991625F00F7DFBF /* MusicPlaylistModel.swift */,
-				7A5CF1C02993FCAB005D31C7 /* TopChannelsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +298,14 @@
 				7A2C9AE6298D2011002C71D2 /* ContainerStoryboard.storyboard */,
 			);
 			name = Container;
+			sourceTree = "<group>";
+		};
+		7A790A322995393A00E4DBB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A790A332995394A00E4DBB0 /* Array+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,20 +553,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A3CDF8F298EAAB700B5A70C /* ContainerPresenterContract.swift in Sources */,
-				7A5CF1C12993FCAB005D31C7 /* TopChannelsModel.swift in Sources */,
 				7A2C9AFA298D87EA002C71D2 /* YTPLayerViewController.swift in Sources */,
 				7A2C9AF6298D2F5A002C71D2 /* VideoCollectionViewCell.swift in Sources */,
 				7A3CDF87298E9E4E00B5A70C /* Network.swift in Sources */,
-				7AE955452991625F00F7DFBF /* MusicPlaylistModel.swift in Sources */,
 				7A2C9AEB298D2363002C71D2 /* CarouselCollectionViewCell.swift in Sources */,
 				7A2C9AF1298D2633002C71D2 /* MusicCollectionViewCell.swift in Sources */,
-				7A3CDF8C298EA6A600B5A70C /* PlaylistsList.swift in Sources */,
+				7A790A342995394A00E4DBB0 /* Array+Extension.swift in Sources */,
 				7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */,
 				7A3CDF89298E9E7B00B5A70C /* NetworkConfiguration.swift in Sources */,
 				7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */,
 				7A2C9AE2298D1BFB002C71D2 /* ContainerViewController.swift in Sources */,
 				7A3CDF91298EAC7E00B5A70C /* ContainerPresenter.swift in Sources */,
-				7ABBBDD7298EBECB004970F3 /* PlaylistItems.swift in Sources */,
 				7A1D73E329881DC7002FA5B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

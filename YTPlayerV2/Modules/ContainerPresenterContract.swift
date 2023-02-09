@@ -6,17 +6,21 @@
 //
 
 import Foundation
-
-protocol ContainerProtocol: AnyObject {
-    func setTopChannels(channels: [ChannelsItems])
-    func setPlaylistsUD(playlists: PlaylistsList?)
-    func setMusicPlaylistItem(item: PlaylistItems?)
-    
-}
-protocol ContainerViewProtocol: AnyObject  {
-    init(view:ContainerProtocol)
-    var playlistList: PlaylistsList? {get set}
-    func getPlaylists()
-    func getMusicPlaylist(playlistID: [String])
-    func getTopChannels(arrayId: [String])
-}
+//
+//protocol ContainerProtocol: AnyObject {
+//    func setTopChannels(channels: [ChannelsItems])
+//    func setPlaylistsUD(playlists: PlaylistsList?)
+//    func setMusicPlaylistItem(item: PlaylistItems?)
+//    
+//}
+//
+//
+//protocol ContainerViewProtocol: AnyObject  {
+//    init(view:ContainerProtocol)
+//    var playlistList: PlaylistsList? {get set}
+//    func getTopChannels(arrayId: [String])
+//
+//    func getPlaylists()
+//    func getMusicPlaylist(playlistID: [String])
+//    
+//}
