@@ -14,8 +14,7 @@ enum YoutubeAPI {
     case getPlaylists
     case getPlaylistItems(playlistId: String)
     
-    case getVideoItems(videoId: String)
-    
+    case getVideoData(videoId: String)
 }
 
 extension YoutubeAPI: TargetType {
@@ -33,9 +32,9 @@ extension YoutubeAPI: TargetType {
             
         case .getTopChannels(let channelId):
             return "channels?part=statistics&part=snippet&id=\(channelId)&key=\(Net.apiKey)"
-            
-        case .getVideoItems(videoId: let id):
-            return "videos?part=statistics&part=snippet&id=\(id)&key=\(Net.apiKey)"
+
+        case .getVideoData(videoId: let videoId):
+            return "videos?part=statistics&part=snippet&id=\(videoId)&key=\(Net.apiKey)"
         }
         
     }
