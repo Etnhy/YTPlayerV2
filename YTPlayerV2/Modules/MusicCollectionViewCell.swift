@@ -32,5 +32,14 @@ class MusicCollectionViewCell: UICollectionViewCell {
         musicSongName.minimumScaleFactor = 0.7
     }
     
+    public func configure(with model: VideoItems?) {
+        guard let model = model else { return }
+        self.songId = model.id
+        musicSongName.text = model.snippet.title
+        listenersCountLabel.text = "\(model.statistics.viewCount) views"
+        guard let urlImage = URL(string: "\(model.snippet.thumbnails.high.url)") else { return }
+        musicImageView.af.setImage(withURL: urlImage)
+        
+    }
 
 }

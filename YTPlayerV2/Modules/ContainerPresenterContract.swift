@@ -10,6 +10,7 @@ import Foundation
 protocol ContainerProtocol: AnyObject {
     func showError(error: String)
     func setPlaylistsNames(playlists: ChannelsPlaylists)
+    func setMusic(data: [VideoItems]?)
 }
 protocol ContainerViewProtocol: AnyObject {
     init(view: ContainerProtocol)

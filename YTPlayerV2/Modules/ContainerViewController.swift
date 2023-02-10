@@ -26,7 +26,7 @@ class ContainerViewController: UIViewController {
     
     var presenter: ContainerPresenter?
     var playlists: ChannelsPlaylists?
-    
+    var musicItems: [VideoItems]?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -106,7 +106,13 @@ extension ContainerViewController: ContainerProtocol {
 //        print(self.playlists)
     }
 
-    
+    func setMusic(data: [VideoItems]?) {
+        self.musicItems = data
+        guard let musicItems = self.musicItems else { return }
+        if !musicItems.isEmpty {
+            self.musicPlaylistCollectionView.reloadData()
+        }
+    }
     func setCarouselCollectionView() {
         print("q")
     }
@@ -132,7 +138,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         switch collectionView {
         case carouselCollectionView     : return 4
             
-        case musicPlaylistCollectionView: return 10
+        case musicPlaylistCollectionView: return  self.musicItems?.count ?? 0
             
             
         case videoPlaylistCollectionView: return 10
@@ -154,6 +160,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MusicCollectionViewCell.reuseIdentifier, for: indexPath) as? MusicCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.configure(with: self.musicItems?[indexPath.item])
 
             return cell
             
@@ -165,15 +172,10 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         default: return UICollectionViewCell()
         }
     }
-    
-    fileprivate func getCurrentPage() -> Int {
-        let visibleRect = CGRect(origin: carouselCollectionView.contentOffset, size: carouselCollectionView.bounds.size)
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        if let visibleIndexPath = carouselCollectionView.indexPathForItem(at: visiblePoint) {
-            return visibleIndexPath.row
-        }
-        return currentPage
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(self.musicItems![indexPath.item].id)")
     }
+
 }
 
 //MARK: - (extension) UICollectionViewDelegateFlowLayout
@@ -211,4 +213,14 @@ extension ContainerViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-
+ //MARK: - getCurrentPage() -> Int
+extension ContainerViewController {
+    fileprivate func getCurrentPage() -> Int {
+        let visibleRect = CGRect(origin: carouselCollectionView.contentOffset, size: carouselCollectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = carouselCollectionView.indexPathForItem(at: visiblePoint) {
+            return visibleIndexPath.row
+        }
+        return currentPage
+    }
+}
