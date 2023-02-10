@@ -12,4 +12,5 @@ struct Snippet: Codable {
     let title: String
     let thumbnails: Thumbnails
     let resourceId: ResourceId?
+    let localized: Localized?
 }
