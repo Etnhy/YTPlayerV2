@@ -23,7 +23,8 @@ class ContainerPresenter: ContainerViewProtocol {
 
     var musicsId = [String]()
     var videosId = [String]()
-    
+    var videoData = [VideoData]()
+
     required init(view: ContainerProtocol) {
         self.view = view
         getPlaylistsId()
@@ -60,25 +61,36 @@ class ContainerPresenter: ContainerViewProtocol {
                     }
                     print(self.videosId)
 //                    print(result)
-                    self.getVideoData(videoId: self.videosId[0])
+                    for id in self.videosId {
+                        self.getVideoData(videoId: id)
+                    }
                 }
             case .failure(let error):
                 print(error)
                 self.view?.showError(error: error.localizedDescription)
             }
         }
-    }//https://youtube.googleapis.com/youtube/v3/https://youtube.googleapis.com/youtube/v3/videos?part=statistics&part=snippet&id=gWCYyLiF45U&key=AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
-    
+    }
     func getVideoData(videoId: String) {
-        provider.request(.getVideoData(videoId: videoId)) { result in
-            switch result {
-            case .success(let response):
-                let result = try? response.map(VideoData.self)
-                print(result)
-            case .failure(let error):
-                self.view?.showError(error: error.localizedDescription)
+        DispatchQueue.main.async {
+            
+            self.provider.request(.getVideoData(videoId: videoId)) { result in
+                switch result {
+                case .success(let response):
+                    let result = try? response.map(VideoData.self)
+                    guard let result = result else { return }
+                    self.videoData.append(result)
+                    print(self.videoData.count)
+                    if self.videoData.count >= 10 {
+                        print("COMPLETED")
+                    }
+                    
+                case .failure(let error):
+                    self.view?.showError(error: error.localizedDescription)
+                }
             }
         }
+
     }
     
 
