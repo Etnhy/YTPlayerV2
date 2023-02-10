@@ -72,7 +72,7 @@ class ContainerPresenter: ContainerViewProtocol {
         }
     }
     func getVideoData(videoId: String) {
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             
             self.provider.request(.getVideoData(videoId: videoId)) { result in
                 switch result {
@@ -89,7 +89,7 @@ class ContainerPresenter: ContainerViewProtocol {
                     self.view?.showError(error: error.localizedDescription)
                 }
             }
-        }
+//        }
 
     }
     
