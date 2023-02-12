@@ -27,14 +27,18 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 0.2
         self.layer.borderColor = UIColor.blue.cgColor
+        videoNameLabel.adjustsFontSizeToFitWidth = true
+        videoNameLabel.minimumScaleFactor = 0.7
 
     }
     
     public func configure(with model: VideoItems?) {
         guard let model = model else { return }
+        guard let views = model.statistics.viewCount else { return }
+
         self.songId = model.id
         videoNameLabel.text = model.snippet.title
-        listenersCounter.text = "\(model.statistics.viewCount) views"
+        listenersCounter.text = "\(views) views"
         
         guard let urlImage = URL(string: "\(model.snippet.thumbnails.high.url)") else { return }
         videoImageView.af.setImage(withURL: urlImage)

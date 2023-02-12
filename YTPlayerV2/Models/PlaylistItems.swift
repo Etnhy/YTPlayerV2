@@ -17,6 +17,7 @@ struct Playlist: Codable {
 struct PlaylistItems: Codable {
     let id: String
     let snippet: Snippet
+    let statistics: VideoStatistics?
 
 }
 

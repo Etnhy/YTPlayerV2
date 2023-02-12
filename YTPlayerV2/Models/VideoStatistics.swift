@@ -9,6 +9,7 @@ import Foundation
 
  //MARK: - VideoStatistics
 struct VideoStatistics: Codable {
-    let viewCount: String
-    let likeCount: String
+    let viewCount: String?
+    let likeCount: String?
+    let subscriberCount: String?
 }
