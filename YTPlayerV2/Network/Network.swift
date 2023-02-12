@@ -44,7 +44,7 @@ extension YoutubeAPI: TargetType {
     }
     
     var task: Moya.Task {
-        print("\(baseURL)\(path)")
+//        print("\(baseURL)\(path)")
         return .requestPlain
     }
     
