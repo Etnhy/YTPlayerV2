@@ -7,16 +7,8 @@
 
 import Foundation
 
-
+ //MARK: - VideoStatistics
 struct VideoStatistics: Codable {
     let viewCount: String
     let likeCount: String
 }
-/*
- "statistics": {
-     "viewCount": "8755",
-     "likeCount": "188",
-     "favoriteCount": "0",
-     "commentCount": "0"
- }
- */

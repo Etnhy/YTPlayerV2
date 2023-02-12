@@ -32,48 +32,47 @@ class ContainerPresenter: ContainerViewProtocol {
     }
     //// тянем плейлисты с канала
     func getPlaylistsId() {
-        
-        provider.request(.getPlaylists) { result in
-            switch result {
-            case .success(let response):
-                if let result = try? response.map(ChannelsPlaylists.self) {
-                    for id in result.items {
-                        self.musicsId.append(id.id)
+        provider.rx.requestWithProgress(.getPlaylists)
+            .subscribe { event in
+                switch event {
+                case .next(let response):
+                    if let result = try? response.response?.map(ChannelsPlaylists.self) {
+                        for id in result.items {
+                            self.musicsId.append(id.id)
+                        }
+                        self.view?.setPlaylistsNames(playlists:result)
                     }
-//                    print(self.musicsId)
-                    self.view?.setPlaylistsNames(playlists: result)
+                case .error(let error):
+                    self.view?.showError(error: error.localizedDescription)
+                case .completed:
                     self.getPlaylistItems(id: self.musicsId[0])
-                    
                 }
-            case .failure(let error):
-                print(error)
-                self.view?.showError(error: error.localizedDescription)
-            }
-        }
+            }.disposed(by: dispose)
     }
     
     func getPlaylistItems(id: String) {
-        provider.request(.getPlaylistItems(playlistId: id)) { result in
-            switch result {
-            case .success(let response):
-                if let result = try? response.map(Playlist.self) {
-                    for id in result.items {
-                        self.videosId.append(id.snippet.resourceId?.videoId ?? "")
+        provider.rx.requestWithProgress(.getPlaylistItems(playlistId: id))
+            .subscribe { event in
+                switch event {
+                case .next(let response):
+                    if let result = try? response.response?.map(Playlist.self) {
+                        for id in result.items {
+                            self.videosId.append(id.snippet.resourceId?.videoId ?? "")
+                        }
+
                     }
-//                    print(self.videosId)
-//                    print(result)
+                case .error(let error):
+                    print(error)
+                        
+                case .completed:
                     for id in self.videosId {
                         self.getVideoData(videoId: id)
                     }
                 }
-            case .failure(let error):
-                print(error)
-                self.view?.showError(error: error.localizedDescription)
-            }
-        }
+            }.disposed(by: dispose)
+
     }
     func getVideoData(videoId: String) {
-//        DispatchQueue.main.async {
         provider.rx.requestWithProgress(.getVideoData(videoId: videoId))
             .subscribe { event in
                 switch event {
@@ -89,7 +88,6 @@ class ContainerPresenter: ContainerViewProtocol {
                         print("COMPLETED - ")
                         self.view?.setMusic(data: self.videoData)
                     }
-
                 }
             }.disposed(by: dispose)
     }

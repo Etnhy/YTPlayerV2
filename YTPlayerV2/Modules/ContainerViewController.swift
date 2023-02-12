@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 import SkeletonView
 
 //MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0

@@ -7,6 +7,7 @@
 
 import Foundation
 
+ //MARK: - Localized
 struct Localized: Codable {
     let title: String
     let description: String

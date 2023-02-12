@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 import WebKit
 class YTPLayerViewController: UIViewController {
     static let identifier = "YTPLayerViewController"

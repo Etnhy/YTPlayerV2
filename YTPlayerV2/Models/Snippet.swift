@@ -7,6 +7,8 @@
 
 import Foundation
 
+ //MARK: - Snippet
+/// относистся ко всем Snippet
 struct Snippet: Codable {
     let publishedAt: String
     let title: String

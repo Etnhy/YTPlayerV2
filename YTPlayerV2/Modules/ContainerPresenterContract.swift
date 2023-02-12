@@ -12,10 +12,10 @@ protocol ContainerProtocol: AnyObject {
     func setPlaylistsNames(playlists: ChannelsPlaylists)
     func setMusic(data: [VideoItems]?)
 }
+
 protocol ContainerViewProtocol: AnyObject {
     init(view: ContainerProtocol)
     func getPlaylistsId()
     func getPlaylistItems(id: String)
-    
     func getVideoData(videoId: String)
 }

@@ -6,12 +6,12 @@ target 'YTPlayerV2' do
   use_frameworks!
 
   # Pods for YTPlayerV2
-	pod 'SnapKit', '~> 5.0.0'
+	pod 'SnapKit'
 	pod 'Alamofire'
 	pod 'AlamofireImage'
 	pod "youtube-ios-player-helper"
 	pod 'SkeletonView'
-	pod 'Moya/RxSwift', '~> 15.0'
+	pod 'Moya/RxSwift'
 
 
 
