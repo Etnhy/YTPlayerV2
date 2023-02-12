@@ -26,6 +26,7 @@ class ContainerViewController: UIViewController {
     var presenter: ContainerPresenter?
     var playlists: ChannelsPlaylists?
     var musicItems: [VideoItems]?
+    var videoItems: [VideoItems]?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -100,9 +101,16 @@ class ContainerViewController: UIViewController {
 }
  //MARK: - Container Protocol
 extension ContainerViewController: ContainerProtocol {
+    func setVideos(data: [VideoItems]?) {
+        self.videoItems = data
+        guard let videoItems = self.videoItems else { return }
+        if !videoItems.isEmpty {
+            self.videoPlaylistCollectionView.reloadData()
+        }
+    }
+    
     func setPlaylistsNames(playlists: ChannelsPlaylists) {
         self.playlists = playlists
-//        print(self.playlists)
     }
 
     func setMusic(data: [VideoItems]?) {
@@ -140,7 +148,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         case musicPlaylistCollectionView: return  self.musicItems?.count ?? 0
             
             
-        case videoPlaylistCollectionView: return 10
+        case videoPlaylistCollectionView: return self.videoItems?.count ?? 0
         default : return 0
             
         }
@@ -167,6 +175,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.reuseIdentifier, for: indexPath) as? VideoCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.configure(with: self.videoItems?[indexPath.item])
             return cell
         default: return UICollectionViewCell()
         }

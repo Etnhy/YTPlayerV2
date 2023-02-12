@@ -13,6 +13,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var videoNameLabel: UILabel!
     @IBOutlet weak var listenersCounter: UILabel!
+    var songId: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +28,16 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 0.2
         self.layer.borderColor = UIColor.blue.cgColor
 
+    }
+    
+    public func configure(with model: VideoItems?) {
+        guard let model = model else { return }
+        self.songId = model.id
+        videoNameLabel.text = model.snippet.title
+        listenersCounter.text = "\(model.statistics.viewCount) views"
+        
+        guard let urlImage = URL(string: "\(model.snippet.thumbnails.high.url)") else { return }
+        videoImageView.af.setImage(withURL: urlImage)
+        
     }
 }
