@@ -17,6 +17,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var subscribersCountLabel: UILabel!
 
+    var id: String = ""
     
     let strokeTextAttributes: [NSAttributedString.Key : Any] = [
         .strokeColor : UIColor.black,
@@ -39,5 +40,13 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     }
 
+    public func configure(model: PlaylistItems) {
+        guard let subs = model.statistics?.subscriberCount else { return }
+        self.authorNameLabel.text = model.snippet.title
+        self.subscribersCountLabel.text = "subs: \(subs)"
+        guard let urlImage = URL(string: "\(model.snippet.thumbnails.high.url)") else { return }
 
+            self.authorImageView.af.setImage(withURL: urlImage)
+        
+    }
 }
