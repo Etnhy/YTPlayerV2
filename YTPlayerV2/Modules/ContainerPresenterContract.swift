@@ -18,9 +18,16 @@ protocol ContainerViewProtocol: AnyObject {
     init(view: ContainerProtocol)
     func getPlaylistsId()
     
+}
+
+protocol GetMusic: AnyObject {
     func getMusicItems(id: String)
     func getMusicData(videoId: String)
-    
+
+}
+
+protocol GetVideo: AnyObject {
     func getVideoItems(id: String)
     func getVideoData(videoId: String)
 }
+

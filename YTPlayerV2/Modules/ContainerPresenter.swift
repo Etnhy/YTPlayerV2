@@ -58,51 +58,77 @@ class ContainerPresenter: ContainerViewProtocol {
                 }
             }.disposed(by: dispose)
     }
-     //MARK: - Music -
-    func getMusicItems(id: String) {
-        provider.rx.requestWithProgress(.getPlaylistItems(playlistId: id))
-            .subscribe { event in
-                switch event {
-                case .next(let response):
-                    if let result = try? response.response?.map(Playlist.self) {
-                        for id in result.items {
-                            self.musicItemsId.append(id.snippet.resourceId?.videoId ?? "")
-                        }
-                        print(self.musicItemsId)
-                    }
-                case .error(let error):
-                    print(error)
-                        
-                case .completed:
-                    for id in self.musicItemsId {
-                        self.getMusicData(videoId: id)
-                    }
-                }
-            }.disposed(by: dispose)
+    
+}
 
-    }
-    
-    func getMusicData(videoId: String) {
-        provider.rx.requestWithProgress(.getVideoData(videoId: videoId))
-            .subscribe { event in
-                switch event {
-                case .next(let response):
-                    let result = try? response.response?.map(VideoData.self)
-                    guard let result = result else { return }
-                    self.musicData.append(contentsOf: result.items)
-//                    print(self.musicData.count)
-                case .error(let error):
-                    self.view?.showError(error: error.localizedDescription)
-                case .completed:
-                    if self.musicData.count >= 10 {
-//                        print("COMPLETED - ")
-                        self.view?.setMusic(data: self.musicData)
-                    }
-                }
-            }.disposed(by: dispose)
-    }
-    
-     //MARK: - Videos
+//MARK: extension - GetMusic
+extension ContainerPresenter: GetMusic {
+   func getMusicItems(id: String) {
+       provider.rx.requestWithProgress(.getPlaylistItems(playlistId: id))
+           .subscribe { event in
+               switch event {
+               case .next(let response):
+                   if let result = try? response.response?.map(Playlist.self) {
+                       for id in result.items {
+                           self.musicItemsId.append(id.snippet.resourceId?.videoId ?? "")
+                       }
+                       print(self.musicItemsId)
+                   }
+               case .error(let error):
+                   print(error)
+                       
+               case .completed:
+                   for id in self.musicItemsId {
+                       self.getMusicData(videoId: id)
+                   }
+               }
+           }.disposed(by: dispose)
+
+   }
+   
+   func getMusicData(videoId: String) {
+       provider.rx.requestWithProgress(.getVideoData(videoId: videoId))
+           .subscribe { event in
+               switch event {
+               case .next(let response):
+                   let result = try? response.response?.map(VideoData.self)
+                   guard let result = result else { return }
+                   self.musicData.append(contentsOf: result.items)
+               case .error(let error):
+                   self.view?.showError(error: error.localizedDescription)
+               case .completed:
+                   if self.musicData.count >= 10 {
+                       self.view?.setMusic(data: self.musicData)
+                   }
+               }
+           }.disposed(by: dispose)
+   }
+
+}
+
+//MARK: extension - GetVideo
+
+extension ContainerPresenter: GetVideo {
+   
+   func getVideoData(videoId: String) {
+       provider.rx.requestWithProgress(.getVideoData(videoId: videoId))
+           .subscribe { event in
+               switch event {
+               case .next(let response):
+                   let result = try? response.response?.map(VideoData.self)
+                   guard let result = result else { return }
+                   self.videoData.append(contentsOf: result.items)
+               case .error(let error):
+                   self.view?.showError(error: error.localizedDescription)
+               case .completed:
+                   if self.videoData.count >= 10 {
+                       self.view?.setVideos(data: self.videoData)
+                   }
+               }
+           }.disposed(by: dispose)
+
+   }
+
     func getVideoItems(id: String) {
         provider.rx.requestWithProgress(.getPlaylistItems(playlistId: id))
             .subscribe { event in
@@ -112,8 +138,6 @@ class ContainerPresenter: ContainerViewProtocol {
                         for id in result.items {
                             self.videoItemsId.append(id.snippet.resourceId?.videoId ?? "")
                         }
-//                        print(result)
-//                        print(self.videoItemsId)
                     }
                 case .error(let error):
                     self.view?.showError(error: error.localizedDescription)
@@ -124,24 +148,5 @@ class ContainerPresenter: ContainerViewProtocol {
                     }                }
             }.disposed(by: dispose)
     }
-    
-    
-    func getVideoData(videoId: String) {
-        provider.rx.requestWithProgress(.getVideoData(videoId: videoId))
-            .subscribe { event in
-                switch event {
-                case .next(let response):
-                    let result = try? response.response?.map(VideoData.self)
-                    guard let result = result else { return }
-                    self.videoData.append(contentsOf: result.items)
-                case .error(let error):
-                    self.view?.showError(error: error.localizedDescription)
-                case .completed:
-                    if self.videoData.count >= 10 {
-                        self.view?.setVideos(data: self.videoData)
-                    }
-                }
-            }.disposed(by: dispose)
 
-    }
 }
