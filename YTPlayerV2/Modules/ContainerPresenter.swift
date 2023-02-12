@@ -12,15 +12,11 @@ import RxSwift
 
 class ContainerPresenter: ContainerViewProtocol {
 
-    
-
-    
     var provider = MoyaProvider<YoutubeAPI>{ target in
         return Endpoint(url: "\(target.baseURL)\(target.path)",
                         sampleResponseClosure: { .networkResponse(200, target.sampleData) },
                         method: target.method, task: target.task, httpHeaderFields: target.headers)
     }
-    
     
     weak var view: ContainerProtocol?
     var dispose = DisposeBag()
@@ -32,12 +28,39 @@ class ContainerPresenter: ContainerViewProtocol {
     var musicData = [VideoItems]()
     
     var videoData = [VideoItems]()
-
+    var topChannels = [PlaylistItems]()
 
     required init(view: ContainerProtocol) {
         self.view = view
+        
         getPlaylistsId()
+        getTopChannels(channels: Net.channelsIDs)
     }
+    
+    func getTopChannels(channels: [String]) {
+        channels.forEach { id in
+            provider.rx.requestWithProgress(.getTopChannels(channelId: id))
+                .subscribe { event in
+                    switch event {
+                    case .next(let response):
+                        if let result = try? response.response?.map(TopChannels.self) {
+                            self.topChannels.append(contentsOf: result.items)
+
+                        }
+                    case .error(let error):
+                        self.view?.showError(error: error.localizedDescription)
+                    case .completed:
+                        print("Top channel set")
+                        self.view?.setTopCHannels(data: self.topChannels)
+//                        self.getPlaylistsId()
+                    }
+                }.disposed(by: dispose)
+        }
+    }
+    
+
+
+    
      //MARK: - Playlists
     func getPlaylistsId() {
         provider.rx.requestWithProgress(.getPlaylists)

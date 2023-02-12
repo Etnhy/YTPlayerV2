@@ -27,6 +27,7 @@ class ContainerViewController: UIViewController {
     var playlists: ChannelsPlaylists?
     var musicItems: [VideoItems]?
     var videoItems: [VideoItems]?
+    var topChannels: [PlaylistItems]?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     private var currentPage = 0 {
@@ -101,6 +102,15 @@ class ContainerViewController: UIViewController {
 }
  //MARK: - Container Protocol
 extension ContainerViewController: ContainerProtocol {
+    func setTopCHannels(data: [PlaylistItems]) {
+        self.topChannels = data
+        guard let topChannels = self.topChannels else { return }
+        if !topChannels.isEmpty {
+            self.carouselCollectionView.reloadData()
+        }
+        
+    }
+    
     func setVideos(data: [VideoItems]?) {
         self.videoItems = data
         guard let videoItems = self.videoItems else { return }
@@ -120,10 +130,7 @@ extension ContainerViewController: ContainerProtocol {
             self.musicPlaylistCollectionView.reloadData()
         }
     }
-    func setCarouselCollectionView() {
-        print("q")
-    }
-    
+
 
     func showError(error: String) {
         print(error)
@@ -143,7 +150,7 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case carouselCollectionView     : return 4
+        case carouselCollectionView     : return self.topChannels?.count ?? 0
             
         case musicPlaylistCollectionView: return  self.musicItems?.count ?? 0
             
@@ -159,6 +166,9 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         case carouselCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.reuseIdentifier, for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
+            }
+            if let channels = self.topChannels {
+                cell.configure(model: channels[indexPath.item])
             }
 
             return cell

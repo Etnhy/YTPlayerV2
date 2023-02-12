@@ -12,11 +12,13 @@ protocol ContainerProtocol: AnyObject {
     func setPlaylistsNames(playlists: ChannelsPlaylists)
     func setMusic(data: [VideoItems]?)
     func setVideos(data: [VideoItems]?)
+    func setTopCHannels(data: [PlaylistItems])
 }
 
 protocol ContainerViewProtocol: AnyObject {
     init(view: ContainerProtocol)
     func getPlaylistsId()
+    func getTopChannels(channels: [String])
     
 }
 

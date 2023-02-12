@@ -34,9 +34,10 @@ class MusicCollectionViewCell: UICollectionViewCell {
     
     public func configure(with model: VideoItems?) {
         guard let model = model else { return }
+        guard let views = model.statistics.viewCount else { return }
         self.songId = model.id
         musicSongName.text = model.snippet.title
-        listenersCountLabel.text = "\(model.statistics.viewCount) views"
+        listenersCountLabel.text = "\(views) views"
         guard let urlImage = URL(string: "\(model.snippet.thumbnails.high.url)") else { return }
         musicImageView.af.setImage(withURL: urlImage)
         
