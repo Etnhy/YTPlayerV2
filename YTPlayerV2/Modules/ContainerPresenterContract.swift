@@ -37,5 +37,8 @@ protocol GetVideo: AnyObject {
     func getVideoData(videoId: String)
 }
 
- //MARK: - send id to player delegate
+ //MARK: - send to player delegate
 
+protocol SendDataToPlayerDelegate: AnyObject {
+    func toPlayer(data: PlayerModel)
+}

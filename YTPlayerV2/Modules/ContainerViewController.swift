@@ -31,6 +31,8 @@ class ContainerViewController: UIViewController {
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     
+   weak var sendToPlayer: SendDataToPlayerDelegate?
+    
     private var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
@@ -57,14 +59,15 @@ class ContainerViewController: UIViewController {
     }
     
     fileprivate func setupYTPlayer() {
+        
         self.addChild(playerViewController)
         self.view.addSubview(playerViewController.view)
         self.playerViewController.showHideButton.addTarget(self, action: #selector(showHidePlayerAction), for: .touchUpInside)
         playerViewController.view.snp.makeConstraints { make in
             make.bottom.equalTo(self.view.snp.bottom).offset(650)
             make.leading.trailing.equalTo(self.view)
-            
         }
+        self.sendToPlayer = playerViewController
     }
     
     fileprivate func registerCell() {
@@ -197,6 +200,12 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             print("\(self.topChannels![indexPath.item].id)")
         case musicPlaylistCollectionView:
             print("\(self.musicItems![indexPath.item].id)")
+            guard let music = self.musicItems else { return }
+            let newPlayerModel = PlayerModel(
+                title: music[indexPath.item].snippet.title,
+                viewsCount: music[indexPath.item].statistics.viewCount ?? "views error",
+                videoId: music[indexPath.item].id)
+            self.sendToPlayer?.toPlayer(data: newPlayerModel)
         case videoPlaylistCollectionView:
             print("\(self.videoItems![indexPath.item].id)")
         default: print("tap")
@@ -252,3 +261,4 @@ extension ContainerViewController {
         return currentPage
     }
 }
+

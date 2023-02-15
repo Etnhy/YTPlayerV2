@@ -23,8 +23,10 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
     
-    var isPlayed: Bool = false
 
+    
+    var isPlayed: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settings()
@@ -43,12 +45,19 @@ class YTPLayerViewController: UIViewController {
     
     @objc fileprivate func playerPauseAction() {
         isPlayed.toggle()
-       var buttonConfig = UIButton.Configuration.filled()
-       buttonConfig.image = isPlayed ? UIImage(systemName: "pause.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34)) : UIImage(systemName: "play.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34))
-       buttonConfig.baseBackgroundColor = .clear
+        var buttonConfig = UIButton.Configuration.filled()
+        buttonConfig.image = isPlayed ? UIImage(systemName: "pause.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34)) : UIImage(systemName: "play.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34))
+        buttonConfig.baseBackgroundColor = .clear
         buttonConfig.baseForegroundColor = .black
-       playPauseButton.configuration = buttonConfig
+        playPauseButton.configuration = buttonConfig
     }
-    }
+}
 
 
+extension YTPLayerViewController: SendDataToPlayerDelegate {
+    func toPlayer(data: PlayerModel) {
+        print("DATATAT --\(data)")
+    }
+    
+    
+}
