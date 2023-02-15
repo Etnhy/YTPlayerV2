@@ -47,6 +47,9 @@ class YTPLayerViewController: UIViewController {
         self.songNameLabel.text = playerModel.title
 
         DispatchQueue.main.async {
+            //FIXME: вызывает две фиолетовые ошибки с потками
+            ///// This method should not be called on the main thread as it may lead to UI unresponsiveness.
+            
             self.yotubeWebView.load(withVideoId: playerModel.videoId)
         }
     }
