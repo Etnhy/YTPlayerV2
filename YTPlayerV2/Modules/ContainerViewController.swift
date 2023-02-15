@@ -7,8 +7,10 @@
 
 import UIKit
 import SkeletonView
+import RxSwift
+import RxRelay
 
-//MARK: - AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0
+
 class ContainerViewController: UIViewController {
     static let identifier = "ContainerViewController"
     
@@ -53,10 +55,7 @@ class ContainerViewController: UIViewController {
         musicPlaylistCollectionView.backgroundColor = .clear
         videoPlaylistCollectionView.backgroundColor = .clear
         
-        
     }
-    
-
     
     fileprivate func setupYTPlayer() {
         self.addChild(playerViewController)
@@ -79,6 +78,7 @@ class ContainerViewController: UIViewController {
         
         
     }
+    
     
     //MARK: - actions
     @objc private func showHidePlayerAction() {
@@ -191,7 +191,16 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(self.musicItems![indexPath.item].id)")
+        switch collectionView {
+        case carouselCollectionView:
+            print("\(self.topChannels![indexPath.item].id)")
+        case musicPlaylistCollectionView:
+            print("\(self.musicItems![indexPath.item].id)")
+        case videoPlaylistCollectionView:
+            print("\(self.videoItems![indexPath.item].id)")
+        default: print("tap")
+        }
+
     }
 
 }

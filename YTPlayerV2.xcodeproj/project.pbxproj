@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05B5D315F23837972412DCF2 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD83DC081B81D0577676799 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */; };
 		35C17BC4F3A2D5FBD0357A34 /* Pods_YTPlayerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CF0A559611EB7A364F0429 /* Pods_YTPlayerV2.framework */; };
+		7A03294B299CED14003E2690 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A03294A299CED14003E2690 /* PlayerModel.swift */; };
 		7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FBFD4298EE773009A4A63 /* AppTheme.swift */; };
 		7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D73E029881DC7002FA5B5 /* AppDelegate.swift */; };
 		7A1D73E329881DC7002FA5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D73E229881DC7002FA5B5 /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 		5E55F44A48F59089C7BDE4A8 /* Pods_YTPlayerV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD83DC081B81D0577676799 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2_YTPlayerV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		750C3FB24EBB69B41766B8D2 /* Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A03294A299CED14003E2690 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		7A0FBFD4298EE773009A4A63 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		7A1D73DD29881DC7002FA5B5 /* YTPlayerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTPlayerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1D73E029881DC7002FA5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				7A5A000029969E130007B27A /* Localized.swift */,
 				7A790A3B29954A2500E4DBB0 /* Thumbnails.swift */,
 				7A5AFFFC29969CC30007B27A /* VideoStatistics.swift */,
+				7A03294A299CED14003E2690 /* PlayerModel.swift */,
 				7A5AFFFE29969D160007B27A /* VideoData+VideoItems.swift */,
 				7A579AD229995CBB0067D157 /* TopChannels.swift */,
 			);
@@ -590,6 +593,7 @@
 				7A790A342995394A00E4DBB0 /* Array+Extension.swift in Sources */,
 				7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */,
 				7A3CDF89298E9E7B00B5A70C /* NetworkConfiguration.swift in Sources */,
+				7A03294B299CED14003E2690 /* PlayerModel.swift in Sources */,
 				7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */,
 				7A2C9AE2298D1BFB002C71D2 /* ContainerViewController.swift in Sources */,
 				7A790A3A299549DF00E4DBB0 /* Snippet.swift in Sources */,

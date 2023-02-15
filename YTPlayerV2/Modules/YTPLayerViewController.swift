@@ -8,6 +8,8 @@
 import UIKit
 import SnapKit
 import WebKit
+import RxSwift
+
 class YTPLayerViewController: UIViewController {
     static let identifier = "YTPLayerViewController"
     
@@ -21,8 +23,11 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
     
+    
      var isPlayed: Bool = false
     
+
+    var playerModel: PlayerModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         settings()

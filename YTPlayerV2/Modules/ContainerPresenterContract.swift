@@ -7,6 +7,7 @@
 
 import Foundation
 
+ //MARK: - protocol ContainerProtocol
 protocol ContainerProtocol: AnyObject {
     func showError(error: String)
     func setPlaylistsNames(playlists: ChannelsPlaylists)
@@ -15,6 +16,7 @@ protocol ContainerProtocol: AnyObject {
     func setTopCHannels(data: [PlaylistItems])
 }
 
+ //MARK: - protocol ContainerViewProtocol
 protocol ContainerViewProtocol: AnyObject {
     init(view: ContainerProtocol)
     func getPlaylistsId()
@@ -22,14 +24,18 @@ protocol ContainerViewProtocol: AnyObject {
     
 }
 
+ //MARK: - protocol GetMusic
 protocol GetMusic: AnyObject {
     func getMusicItems(id: String)
     func getMusicData(videoId: String)
 
 }
 
+ //MARK: - protocol GetVideo
 protocol GetVideo: AnyObject {
     func getVideoItems(id: String)
     func getVideoData(videoId: String)
 }
+
+ //MARK: - send id to player delegate
 

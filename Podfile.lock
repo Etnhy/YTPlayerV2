@@ -7,6 +7,11 @@ PODS:
   - Moya/RxSwift (15.0.0):
     - Moya/Core
     - RxSwift (~> 6.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
@@ -16,6 +21,8 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Moya/RxSwift
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
   - SkeletonView
   - SnapKit
   - youtube-ios-player-helper
@@ -25,6 +32,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Moya
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SkeletonView
     - SnapKit
@@ -34,11 +43,13 @@ SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: a9ebffbca692ed85d2b9afce9cf494d994d70f5f
+PODFILE CHECKSUM: 5c9fbea6d92ff6ccabc5f04bb09f72fd56a09e4f
 
 COCOAPODS: 1.11.3
