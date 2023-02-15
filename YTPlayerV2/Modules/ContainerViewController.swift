@@ -110,7 +110,6 @@ extension ContainerViewController: ContainerProtocol {
         if !topChannels.isEmpty {
             self.carouselCollectionView.reloadData()
         }
-        
     }
     
     func setVideos(data: [VideoItems]?) {
@@ -133,33 +132,26 @@ extension ContainerViewController: ContainerProtocol {
         }
     }
 
-
     func showError(error: String) {
         print(error)
     }
-    
 }
+
  //MARK: - UICollectionViewDataSource, SkeletonCollectionViewDataSource
 extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
         switch skeletonView {
         case carouselCollectionView: return CarouselCollectionViewCell.reuseIdentifier
         default: return "cell"
-            
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case carouselCollectionView     : return self.topChannels?.count ?? 0
-            
         case musicPlaylistCollectionView: return  self.musicItems?.count ?? 0
-            
-            
         case videoPlaylistCollectionView: return self.videoItems?.count ?? 0
         default : return 0
-            
         }
     }
     
@@ -169,10 +161,10 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.reuseIdentifier, for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
             if let channels = self.topChannels {
                 cell.configure(model: channels[indexPath.item])
             }
-
             return cell
             
         case musicPlaylistCollectionView:
@@ -204,7 +196,8 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
             let newPlayerModel = PlayerModel(
                 title: music[indexPath.item].snippet.title,
                 viewsCount: music[indexPath.item].statistics.viewCount ?? "views error",
-                videoId: music[indexPath.item].id)
+                videoId: music[indexPath.item].id,
+                imdageId: music[indexPath.item].snippet.thumbnails.high.url)
             self.sendToPlayer?.toPlayer(data: newPlayerModel)
         case videoPlaylistCollectionView:
             print("\(self.videoItems![indexPath.item].id)")

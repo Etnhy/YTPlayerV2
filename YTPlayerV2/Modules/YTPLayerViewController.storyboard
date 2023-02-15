@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,17 +27,6 @@
                                     <color key="baseForegroundColor" red="0.78823529410000004" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                             </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-jR-Rwv">
-                                <rect key="frame" x="8" y="52" width="377" height="210"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="4Et-vL-k4g"/>
-                                </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebanon Hanower -  Gallowdance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSb-RZ-J2O">
                                 <rect key="frame" x="16" y="305" width="361" height="30"/>
                                 <constraints>
@@ -57,6 +47,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playActionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="K9K-KQ-k1V"/>
+                                </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3n6-Lo-Z8w">
                                 <rect key="frame" x="36" y="276" width="320" height="4"/>
@@ -99,18 +92,24 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFh-4I-JYK" customClass="YTPlayerView">
+                                <rect key="frame" x="8" y="47" width="377" height="210"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="QGY-8Y-3tj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="210" id="bwA-Wi-vD8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bZd-jR-Rwv" firstAttribute="top" secondItem="HgO-ep-3KD" secondAttribute="bottom" constant="20" id="0XX-AD-0ov"/>
                             <constraint firstItem="HgO-ep-3KD" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="1P9-ps-YWn"/>
+                            <constraint firstItem="nFh-4I-JYK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="5c8-zY-M2t"/>
                             <constraint firstItem="fSb-RZ-J2O" firstAttribute="top" secondItem="3n6-Lo-Z8w" secondAttribute="bottom" constant="25" id="7H7-18-vXA"/>
                             <constraint firstItem="gtp-cs-jNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8xs-nI-ezd"/>
                             <constraint firstAttribute="trailing" secondItem="HgO-ep-3KD" secondAttribute="trailing" id="CLE-J9-en4"/>
-                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="top" secondItem="bZd-jR-Rwv" secondAttribute="bottom" constant="14" id="Cxm-EB-SwP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fSb-RZ-J2O" secondAttribute="trailing" constant="16" id="EZe-MS-Tow"/>
-                            <constraint firstItem="HgO-ep-3KD" firstAttribute="trailing" secondItem="bZd-jR-Rwv" secondAttribute="trailing" constant="8" id="K1d-PH-Ddu"/>
                             <constraint firstItem="tuG-0P-uLb" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="Rsz-Ls-YfW"/>
                             <constraint firstItem="HgO-ep-3KD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="2" id="StV-y3-DkL"/>
                             <constraint firstItem="shJ-r8-0cP" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="TQg-Wn-Ig8"/>
@@ -119,9 +118,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3n6-Lo-Z8w" secondAttribute="trailing" constant="37" id="VH4-TZ-edB"/>
                             <constraint firstItem="3n6-Lo-Z8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="cPw-jW-Af6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="shJ-r8-0cP" secondAttribute="trailing" constant="40" id="gSP-XO-1cd"/>
-                            <constraint firstItem="bZd-jR-Rwv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="u3L-hw-OTQ"/>
+                            <constraint firstItem="nFh-4I-JYK" firstAttribute="top" secondItem="HgO-ep-3KD" secondAttribute="bottom" constant="15" id="lNb-7c-DOD"/>
+                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="top" secondItem="nFh-4I-JYK" secondAttribute="bottom" constant="19" id="vQe-bf-5i7"/>
                             <constraint firstItem="gtp-cs-jNY" firstAttribute="top" secondItem="fSb-RZ-J2O" secondAttribute="bottom" constant="21" id="vhI-x1-kTT"/>
                             <constraint firstItem="fSb-RZ-J2O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="x80-Ic-XOc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nFh-4I-JYK" secondAttribute="trailing" constant="8" id="xmd-Me-5BG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gtp-cs-jNY" secondAttribute="trailing" constant="16" id="z0J-9M-obv"/>
                             <constraint firstItem="tOT-tc-5Jq" firstAttribute="centerX" secondItem="gtp-cs-jNY" secondAttribute="centerX" id="zKw-CR-xZa"/>
                         </constraints>
@@ -135,12 +136,12 @@
                         <outlet property="showHideButton" destination="HgO-ep-3KD" id="49K-ac-QBV"/>
                         <outlet property="songNameLabel" destination="fSb-RZ-J2O" id="AbO-1C-luc"/>
                         <outlet property="songProgress" destination="3n6-Lo-Z8w" id="V0i-8a-uph"/>
-                        <outlet property="yotubeWebView" destination="bZd-jR-Rwv" id="Bs0-Fq-LDl"/>
+                        <outlet property="yotubeWebView" destination="nFh-4I-JYK" id="0Th-eJ-oFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="196" y="-96"/>
         </scene>
     </scenes>
     <resources>
@@ -148,5 +149,8 @@
         <image name="backward.fill" catalog="system" width="128" height="77"/>
         <image name="forward.fill" catalog="system" width="128" height="77"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
