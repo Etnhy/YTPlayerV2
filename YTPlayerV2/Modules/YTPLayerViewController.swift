@@ -23,13 +23,9 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
-    
-    let youtubeQueue = DispatchQueue(label: "youtubePlay",qos: .userInitiated,attributes: .concurrent)
-    
+        
     var isPlayed: Bool = false
-    
-    private var playerModel: PlayerModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         settings()
@@ -47,14 +43,17 @@ class YTPLayerViewController: UIViewController {
     }
     
     fileprivate func configure(playerModel: PlayerModel) {
+        self.listenersCountsLAbel.text = "\(playerModel.viewsCount) прослушиваний."
+        self.songNameLabel.text = playerModel.title
+
         DispatchQueue.main.async {
-            self.listenersCountsLAbel.text = "\(playerModel.viewsCount) прослушиваний."
-            self.songNameLabel.text = playerModel.title
+            self.yotubeWebView.load(withVideoId: playerModel.videoId)
         }
     }
     
      //MARK: -  Actions
     @objc fileprivate func playerPauseAction() {
+
         isPlayed.toggle()
         var buttonConfig = UIButton.Configuration.filled()
         buttonConfig.image = isPlayed ? UIImage(systemName: "pause.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34)) : UIImage(systemName: "play.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34))
@@ -66,10 +65,13 @@ class YTPLayerViewController: UIViewController {
     }
     
     @IBAction func playActionButton(_ sender: UIButton) {
-        switch isPlayed {
-        case true: self.yotubeWebView.playVideo()
-        case false: self.yotubeWebView.pauseVideo()
+        DispatchQueue.main.async {
+            switch self.isPlayed {
+            case true: self.yotubeWebView.playVideo()
+            case false: self.yotubeWebView.pauseVideo()
+            }
         }
+
         
     }
     
@@ -78,11 +80,7 @@ class YTPLayerViewController: UIViewController {
 
 extension YTPLayerViewController: SendDataToPlayerDelegate {
     func toPlayer(data: PlayerModel) {
-        print("DATATAT --\(data)")
-        self.playerModel = data
-            guard let playerModel = self.playerModel else { return }
-            self.configure(playerModel: playerModel)
-            self.yotubeWebView.load(withVideoId: playerModel.videoId)
+        self.configure(playerModel: data)
         
     }
     
