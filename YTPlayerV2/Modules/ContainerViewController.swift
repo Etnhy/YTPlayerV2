@@ -7,8 +7,6 @@
 
 import UIKit
 import SkeletonView
-import RxSwift
-import RxRelay
 
 
 class ContainerViewController: UIViewController {
@@ -32,6 +30,7 @@ class ContainerViewController: UIViewController {
     var topChannels: [PlaylistItems]?
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
+    
     private var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
@@ -190,6 +189,8 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         default: return UICollectionViewCell()
         }
     }
+    
+     //MARK: - didSelectItemAt
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case carouselCollectionView:

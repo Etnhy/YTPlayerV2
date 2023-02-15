@@ -23,11 +23,8 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
     
-    
-     var isPlayed: Bool = false
-    
+    var isPlayed: Bool = false
 
-    var playerModel: PlayerModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         settings()
