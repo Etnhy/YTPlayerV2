@@ -21,12 +21,9 @@ class ContainerPresenter: ContainerViewProtocol {
     weak var view: ContainerProtocol?
     var dispose = DisposeBag()
     var playlistsId = [String]()
-    
     var musicItemsId = [String]()
     var videoItemsId = [String]()
-    
     var musicData = [VideoItems]()
-    
     var videoData = [VideoItems]()
     var topChannels = [PlaylistItems]()
 
@@ -45,21 +42,17 @@ class ContainerPresenter: ContainerViewProtocol {
                     case .next(let response):
                         if let result = try? response.response?.map(TopChannels.self) {
                             self.topChannels.append(contentsOf: result.items)
-
                         }
                     case .error(let error):
                         self.view?.showError(error: error.localizedDescription)
                     case .completed:
                         print("Top channel set")
                         self.view?.setTopCHannels(data: self.topChannels)
-//                        self.getPlaylistsId()
                     }
                 }.disposed(by: dispose)
         }
     }
     
-
-
     
      //MARK: - Playlists
     func getPlaylistsId() {

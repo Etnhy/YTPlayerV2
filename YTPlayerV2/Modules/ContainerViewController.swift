@@ -31,7 +31,6 @@ class ContainerViewController: UIViewController {
     var playerShow: Bool = false
     var newOffsetX: CGFloat = 0.0
     
-//    weak var sendToPlayer: SendDataToPlayerDelegate?
     weak var sendArrayToPlayer: SendDataToPlayerDelegate?
     
     private var currentPage = 0 {
@@ -68,7 +67,6 @@ class ContainerViewController: UIViewController {
             make.bottom.equalTo(self.view.snp.bottom).offset(650)
             make.leading.trailing.equalTo(self.view)
         }
-//        self.sendToPlayer = playerViewController
         self.sendArrayToPlayer = playerViewController
     }
     
@@ -192,23 +190,21 @@ extension ContainerViewController: UICollectionViewDataSource, SkeletonCollectio
         switch collectionView {
         case carouselCollectionView:
             print("\(self.topChannels![indexPath.item].id)")
+            
         case musicPlaylistCollectionView:
             print("\(self.musicItems![indexPath.item].id)")
             guard let music = self.musicItems else { return }
             self.sendArrayToPlayer?.arrayToPlayer(indexPath: indexPath.item, data: music)
-            //            let newPlayerModel = PlayerModel(
-//                title: music[indexPath.item].snippet.title,
-//                viewsCount: music[indexPath.item].statistics.viewCount ?? "views error",
-//                videoId: music[indexPath.item].id,
-//                imdageId: music[indexPath.item].snippet.thumbnails.high.url)
-//            self.sendToPlayer?.toPlayer(data: newPlayerModel)
+            
         case videoPlaylistCollectionView:
             print("\(self.videoItems![indexPath.item].id)")
+            
+            guard let video = self.videoItems else { return }
+            self.sendArrayToPlayer?.arrayToPlayer(indexPath: indexPath.item, data: video)
+
         default: print("tap")
         }
-
     }
-
 }
 
 //MARK: - (extension) UICollectionViewDelegateFlowLayout

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import WebKit
 import youtube_ios_player_helper
+import MediaPlayer
 
 class YTPLayerViewController: UIViewController {
     static let identifier = "YTPLayerViewController"
@@ -22,14 +23,16 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
-        
+    @IBOutlet weak var volumeSlider: UIView!
+    
     var isPlayed: Bool = false
-
+    
     var playerData = [VideoItems]()
     var playsInt: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         settings()
     }
     
@@ -37,53 +40,54 @@ class YTPLayerViewController: UIViewController {
         self.view.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: self.view.frame.width,height: 700))
         }
+        setupVolumeView()
         self.view.layer.cornerRadius = 40
         self.yotubeWebView.layer.cornerRadius = 12
         
         self.showHideButton.layer.cornerRadius = 40
         self.playPauseButton.addTarget(self, action: #selector(playerPauseAction), for: .touchUpInside)
     }
+    fileprivate func setupVolumeView() {
+        let volumeView = MPVolumeView(frame: volumeSlider.bounds)
+        volumeSlider.addSubview(volumeView)
+    }
     
     fileprivate func configure(id: Int,playerModel: [VideoItems]) {
-        guard let playsId = playsInt else { return }
-        DispatchQueue.main.async {
-
         self.listenersCountsLAbel.text = "\(playerModel[id].statistics.viewCount ?? "views error") прослушиваний."
         self.songNameLabel.text = playerModel[id].snippet.title
+        
+        self.yotubeWebView.load(withVideoId: playerModel[id].id)
+//        self.songProgress.progress =
+        
 
-            self.yotubeWebView.load(withVideoId: playerModel[id].id)
-        }
 
     }
     
-     //MARK: -  Actions
+    //MARK: -  Actions
     @IBAction func backwardForwardActionButtons(_ sender: UIButton) {
-//        guard var playsInt = playsInt else {return}
-            DispatchQueue.main.async {
-                switch sender.tag {
-                case 0:
-                    if self.playsInt! != 0 {
-                        self.playsInt! -= 1
-                        print(self.playsInt!)
-                        self.configure(id: self.playsInt!, playerModel: self.playerData)
-                    }
-                case 1:
-                    if self.playsInt! < self.playerData.count - 1 {
-                        self.playsInt! += 1
-                        self.configure(id: self.playsInt!, playerModel: self.playerData)
-                        print(self.playsInt!)
-
-                    }
-                default:
+        DispatchQueue.main.async {
+            switch sender.tag {
+            case 0:
+                if self.playsInt! != 0 {
+                    self.playsInt! -= 1
                     print(self.playsInt!)
+                    self.configure(id: self.playsInt!, playerModel: self.playerData)
                 }
-            }
-        
-    }
+            case 1:
+                if self.playsInt! < self.playerData.count - 1 {
+                    self.playsInt! += 1
+                    self.configure(id: self.playsInt!, playerModel: self.playerData)
 
+                }
+            default:
+                print(self.playsInt!)
+            }
+        }
+    }
+    
     
     @objc fileprivate func playerPauseAction() {
-
+        
         isPlayed.toggle()
         var buttonConfig = UIButton.Configuration.filled()
         buttonConfig.image = isPlayed ? UIImage(systemName: "pause.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34)) : UIImage(systemName: "play.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 34))
@@ -91,6 +95,7 @@ class YTPLayerViewController: UIViewController {
         buttonConfig.baseForegroundColor = .black
         playPauseButton.configuration = buttonConfig
     }
+
     
     @IBAction func playActionButton(_ sender: UIButton) {
         DispatchQueue.main.async {
@@ -100,10 +105,9 @@ class YTPLayerViewController: UIViewController {
             }
         }
     }
-    
 }
 
- //MARK: - YTPLayerViewController: SendDataToPlayerDelegate
+//MARK: - YTPLayerViewController: SendDataToPlayerDelegate
 extension YTPLayerViewController: SendDataToPlayerDelegate {
     func arrayToPlayer(indexPath: Int,data: [VideoItems]) {
         self.playsInt = indexPath

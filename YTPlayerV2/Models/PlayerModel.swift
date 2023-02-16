@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+ //MARK: - YTPlayerModel 
 struct PlayerModel {
     let title: String
     let viewsCount: String

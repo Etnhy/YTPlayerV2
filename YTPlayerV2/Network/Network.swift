@@ -13,7 +13,6 @@ enum YoutubeAPI {
     case getTopChannels(channelId: String)
     case getPlaylists
     case getPlaylistItems(playlistId: String)
-    
     case getVideoData(videoId: String)
 }
 

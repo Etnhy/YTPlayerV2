@@ -51,14 +51,6 @@
                                     <action selector="playActionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="K9K-KQ-k1V"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3n6-Lo-Z8w">
-                                <rect key="frame" x="36" y="276" width="320" height="4"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="4" id="gzX-AS-qes"/>
-                                </constraints>
-                                <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listeners counts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtp-cs-jNY">
                                 <rect key="frame" x="16" y="356" width="361" height="20"/>
                                 <constraints>
@@ -106,29 +98,37 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="210" id="bwA-Wi-vD8"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-8p-Wlk">
+                                <rect key="frame" x="46" y="548" width="300" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Pfz-L4-zuM"/>
+                                    <constraint firstAttribute="width" constant="300" id="QvF-gi-6Pw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HgO-ep-3KD" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="1P9-ps-YWn"/>
                             <constraint firstItem="nFh-4I-JYK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="5c8-zY-M2t"/>
-                            <constraint firstItem="fSb-RZ-J2O" firstAttribute="top" secondItem="3n6-Lo-Z8w" secondAttribute="bottom" constant="25" id="7H7-18-vXA"/>
                             <constraint firstItem="gtp-cs-jNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8xs-nI-ezd"/>
                             <constraint firstAttribute="trailing" secondItem="HgO-ep-3KD" secondAttribute="trailing" id="CLE-J9-en4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fSb-RZ-J2O" secondAttribute="trailing" constant="16" id="EZe-MS-Tow"/>
+                            <constraint firstItem="1UN-8p-Wlk" firstAttribute="top" secondItem="tOT-tc-5Jq" secondAttribute="bottom" constant="57" id="I58-hZ-EX8"/>
                             <constraint firstItem="tuG-0P-uLb" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="Rsz-Ls-YfW"/>
                             <constraint firstItem="HgO-ep-3KD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="2" id="StV-y3-DkL"/>
                             <constraint firstItem="shJ-r8-0cP" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="TQg-Wn-Ig8"/>
                             <constraint firstItem="tuG-0P-uLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="TcJ-IW-Pc3"/>
                             <constraint firstItem="tOT-tc-5Jq" firstAttribute="top" secondItem="gtp-cs-jNY" secondAttribute="bottom" constant="65" id="UIN-sX-FD3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3n6-Lo-Z8w" secondAttribute="trailing" constant="37" id="VH4-TZ-edB"/>
-                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="cPw-jW-Af6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="shJ-r8-0cP" secondAttribute="trailing" constant="40" id="gSP-XO-1cd"/>
+                            <constraint firstItem="fSb-RZ-J2O" firstAttribute="top" secondItem="nFh-4I-JYK" secondAttribute="bottom" constant="48" id="j8I-R8-RhS"/>
+                            <constraint firstItem="1UN-8p-Wlk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="lFx-UO-kP4"/>
                             <constraint firstItem="nFh-4I-JYK" firstAttribute="top" secondItem="HgO-ep-3KD" secondAttribute="bottom" constant="15" id="lNb-7c-DOD"/>
-                            <constraint firstItem="3n6-Lo-Z8w" firstAttribute="top" secondItem="nFh-4I-JYK" secondAttribute="bottom" constant="19" id="vQe-bf-5i7"/>
                             <constraint firstItem="gtp-cs-jNY" firstAttribute="top" secondItem="fSb-RZ-J2O" secondAttribute="bottom" constant="21" id="vhI-x1-kTT"/>
                             <constraint firstItem="fSb-RZ-J2O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="x80-Ic-XOc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nFh-4I-JYK" secondAttribute="trailing" constant="8" id="xmd-Me-5BG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1UN-8p-Wlk" secondAttribute="trailing" constant="47" id="xxG-Bc-Elc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gtp-cs-jNY" secondAttribute="trailing" constant="16" id="z0J-9M-obv"/>
                             <constraint firstItem="tOT-tc-5Jq" firstAttribute="centerX" secondItem="gtp-cs-jNY" secondAttribute="centerX" id="zKw-CR-xZa"/>
                         </constraints>
@@ -141,13 +141,13 @@
                         <outlet property="playPauseButton" destination="tOT-tc-5Jq" id="Vxl-xE-AnC"/>
                         <outlet property="showHideButton" destination="HgO-ep-3KD" id="49K-ac-QBV"/>
                         <outlet property="songNameLabel" destination="fSb-RZ-J2O" id="AbO-1C-luc"/>
-                        <outlet property="songProgress" destination="3n6-Lo-Z8w" id="V0i-8a-uph"/>
+                        <outlet property="volumeSlider" destination="1UN-8p-Wlk" id="sWN-1b-7b0"/>
                         <outlet property="yotubeWebView" destination="nFh-4I-JYK" id="0Th-eJ-oFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-96"/>
+            <point key="canvasLocation" x="194.6564885496183" y="-96.478873239436624"/>
         </scene>
     </scenes>
     <resources>
