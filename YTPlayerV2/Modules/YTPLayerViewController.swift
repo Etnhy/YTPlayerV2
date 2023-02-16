@@ -46,19 +46,24 @@ class YTPLayerViewController: UIViewController {
     
     fileprivate func configure(id: Int,playerModel: [VideoItems]) {
         self.listenersCountsLAbel.text = "\(playerModel[id].statistics.viewCount ?? "views error") прослушиваний."
-        
-//        self.listenersCountsLAbel.text = "\(playerModel.viewsCount) прослушиваний."
         self.songNameLabel.text = playerModel[id].snippet.title
 
-//        DispatchQueue.main.async {
-//            //FIXME: вызывает две фиолетовые ошибки с потоками
-//            /// This method should not be called on the main thread as it may lead to UI unresponsiveness.
-//
-//            self.yotubeWebView.load(withVideoId: playerModel.videoId)
-//        }
+        DispatchQueue.main.async {
+            self.yotubeWebView.load(withVideoId: playerModel[id].id)
+        }
+
     }
     
      //MARK: -  Actions
+    
+    
+    @IBAction func backwardSong(_ sender: UIButton) {
+    }
+    
+    @IBAction func forwardSong(_ sender: UIButton) {
+        
+    }
+    
     @objc fileprivate func playerPauseAction() {
 
         isPlayed.toggle()
@@ -67,8 +72,6 @@ class YTPLayerViewController: UIViewController {
         buttonConfig.baseBackgroundColor = .clear
         buttonConfig.baseForegroundColor = .black
         playPauseButton.configuration = buttonConfig
-        
-
     }
     
     @IBAction func playActionButton(_ sender: UIButton) {
@@ -78,14 +81,14 @@ class YTPLayerViewController: UIViewController {
             case false: self.yotubeWebView.pauseVideo()
             }
         }
-
-        
     }
     
 }
 
+ //MARK: - YTPLayerViewController: SendDataToPlayerDelegate
 extension YTPLayerViewController: SendDataToPlayerDelegate {
     func arrayToPlayer(indexPath: Int,data: [VideoItems]) {
+        self.playerData = data
         self.configure(id: indexPath, playerModel: data)
     }
 }
