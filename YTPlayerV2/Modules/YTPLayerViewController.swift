@@ -26,6 +26,8 @@ class YTPLayerViewController: UIViewController {
         
     var isPlayed: Bool = false
 
+    var playerData = [VideoItems]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settings()
@@ -42,16 +44,18 @@ class YTPLayerViewController: UIViewController {
         self.playPauseButton.addTarget(self, action: #selector(playerPauseAction), for: .touchUpInside)
     }
     
-    fileprivate func configure(playerModel: PlayerModel) {
-        self.listenersCountsLAbel.text = "\(playerModel.viewsCount) прослушиваний."
-        self.songNameLabel.text = playerModel.title
+    fileprivate func configure(id: Int,playerModel: [VideoItems]) {
+        self.listenersCountsLAbel.text = "\(playerModel[id].statistics.viewCount ?? "views error") прослушиваний."
+        
+//        self.listenersCountsLAbel.text = "\(playerModel.viewsCount) прослушиваний."
+        self.songNameLabel.text = playerModel[id].snippet.title
 
-        DispatchQueue.main.async {
-            //FIXME: вызывает две фиолетовые ошибки с потками
-            ///// This method should not be called on the main thread as it may lead to UI unresponsiveness.
-            
-            self.yotubeWebView.load(withVideoId: playerModel.videoId)
-        }
+//        DispatchQueue.main.async {
+//            //FIXME: вызывает две фиолетовые ошибки с потоками
+//            /// This method should not be called on the main thread as it may lead to UI unresponsiveness.
+//
+//            self.yotubeWebView.load(withVideoId: playerModel.videoId)
+//        }
     }
     
      //MARK: -  Actions
@@ -80,12 +84,8 @@ class YTPLayerViewController: UIViewController {
     
 }
 
-
 extension YTPLayerViewController: SendDataToPlayerDelegate {
-    func toPlayer(data: PlayerModel) {
-        self.configure(playerModel: data)
-        
+    func arrayToPlayer(indexPath: Int,data: [VideoItems]) {
+        self.configure(id: indexPath, playerModel: data)
     }
-    
-    
 }

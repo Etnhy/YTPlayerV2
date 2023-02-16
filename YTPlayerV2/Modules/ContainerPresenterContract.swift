@@ -39,6 +39,10 @@ protocol GetVideo: AnyObject {
 
  //MARK: - send to player delegate
 
+//protocol SendDataToPlayerDelegate: AnyObject {
+//    func toPlayer(data: PlayerModel)
+//}
+
 protocol SendDataToPlayerDelegate: AnyObject {
-    func toPlayer(data: PlayerModel)
+    func arrayToPlayer(indexPath: Int,data: [VideoItems])
 }
