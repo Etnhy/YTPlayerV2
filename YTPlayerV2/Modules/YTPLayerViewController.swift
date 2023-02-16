@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import WebKit
-import RxSwift
 import youtube_ios_player_helper
 
 class YTPLayerViewController: UIViewController {
@@ -27,6 +26,7 @@ class YTPLayerViewController: UIViewController {
     var isPlayed: Bool = false
 
     var playerData = [VideoItems]()
+    var playsInt: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,24 +45,42 @@ class YTPLayerViewController: UIViewController {
     }
     
     fileprivate func configure(id: Int,playerModel: [VideoItems]) {
+        guard let playsId = playsInt else { return }
+        DispatchQueue.main.async {
+
         self.listenersCountsLAbel.text = "\(playerModel[id].statistics.viewCount ?? "views error") прослушиваний."
         self.songNameLabel.text = playerModel[id].snippet.title
 
-        DispatchQueue.main.async {
             self.yotubeWebView.load(withVideoId: playerModel[id].id)
         }
 
     }
     
      //MARK: -  Actions
-    
-    
-    @IBAction func backwardSong(_ sender: UIButton) {
-    }
-    
-    @IBAction func forwardSong(_ sender: UIButton) {
+    @IBAction func backwardForwardActionButtons(_ sender: UIButton) {
+//        guard var playsInt = playsInt else {return}
+            DispatchQueue.main.async {
+                switch sender.tag {
+                case 0:
+                    if self.playsInt! != 0 {
+                        self.playsInt! -= 1
+                        print(self.playsInt!)
+                        self.configure(id: self.playsInt!, playerModel: self.playerData)
+                    }
+                case 1:
+                    if self.playsInt! < self.playerData.count - 1 {
+                        self.playsInt! += 1
+                        self.configure(id: self.playsInt!, playerModel: self.playerData)
+                        print(self.playsInt!)
+
+                    }
+                default:
+                    print(self.playsInt!)
+                }
+            }
         
     }
+
     
     @objc fileprivate func playerPauseAction() {
 
@@ -88,6 +106,7 @@ class YTPLayerViewController: UIViewController {
  //MARK: - YTPLayerViewController: SendDataToPlayerDelegate
 extension YTPLayerViewController: SendDataToPlayerDelegate {
     func arrayToPlayer(indexPath: Int,data: [VideoItems]) {
+        self.playsInt = indexPath
         self.playerData = data
         self.configure(id: indexPath, playerModel: data)
     }

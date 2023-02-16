@@ -68,7 +68,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-r8-0cP">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-r8-0cP">
                                 <rect key="frame" x="273" y="441" width="80" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3Er-iV-OB4"/>
@@ -80,7 +80,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="forwardSong:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iqo-Sc-kWF"/>
+                                    <action selector="backwardForwardActionButtons:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Xtq-oa-e63"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuG-0P-uLb">
@@ -95,7 +95,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="backwardSong:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pwp-hy-EqP"/>
+                                    <action selector="backwardForwardActionButtons:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pms-R5-jyF"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFh-4I-JYK" customClass="YTPlayerView">
