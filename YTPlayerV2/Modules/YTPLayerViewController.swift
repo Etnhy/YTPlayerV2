@@ -15,7 +15,6 @@ class YTPLayerViewController: UIViewController {
     static let identifier = "YTPLayerViewController"
     
     
-    @IBOutlet weak var songProgress: UIProgressView!
     @IBOutlet weak var yotubeWebView: YTPlayerView!
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var listenersCountsLAbel: UILabel!
@@ -23,7 +22,7 @@ class YTPLayerViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var showHideButton: UIButton!
-    @IBOutlet weak var volumeSlider: UIView!
+    @IBOutlet weak var volumeView: UIView!
     
     var isPlayed: Bool = false
     
@@ -48,8 +47,8 @@ class YTPLayerViewController: UIViewController {
         self.playPauseButton.addTarget(self, action: #selector(playerPauseAction), for: .touchUpInside)
     }
     fileprivate func setupVolumeView() {
-        let volumeView = MPVolumeView(frame: volumeSlider.bounds)
-        volumeSlider.addSubview(volumeView)
+        let volume = MPVolumeView(frame: volumeView.bounds)
+        volumeView.addSubview(volume)
     }
     
     fileprivate func configure(id: Int,playerModel: [VideoItems]) {
@@ -57,10 +56,6 @@ class YTPLayerViewController: UIViewController {
         self.songNameLabel.text = playerModel[id].snippet.title
         
         self.yotubeWebView.load(withVideoId: playerModel[id].id)
-//        self.songProgress.progress =
-        
-
-
     }
     
     //MARK: -  Actions

@@ -98,7 +98,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="210" id="bwA-Wi-vD8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-8p-Wlk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-8p-Wlk" userLabel="VolumeView">
                                 <rect key="frame" x="46" y="548" width="300" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -141,7 +141,7 @@
                         <outlet property="playPauseButton" destination="tOT-tc-5Jq" id="Vxl-xE-AnC"/>
                         <outlet property="showHideButton" destination="HgO-ep-3KD" id="49K-ac-QBV"/>
                         <outlet property="songNameLabel" destination="fSb-RZ-J2O" id="AbO-1C-luc"/>
-                        <outlet property="volumeSlider" destination="1UN-8p-Wlk" id="sWN-1b-7b0"/>
+                        <outlet property="volumeView" destination="1UN-8p-Wlk" id="rl1-vi-utP"/>
                         <outlet property="yotubeWebView" destination="nFh-4I-JYK" id="0Th-eJ-oFd"/>
                     </connections>
                 </viewController>
