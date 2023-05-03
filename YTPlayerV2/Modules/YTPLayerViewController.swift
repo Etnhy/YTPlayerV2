@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import WebKit
-import youtube_ios_player_helper
+import YouTubeiOSPlayerHelper
 import MediaPlayer
 
 class YTPLayerViewController: UIViewController {
