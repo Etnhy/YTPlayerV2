@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05B5D315F23837972412DCF2 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD83DC081B81D0577676799 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */; };
-		35C17BC4F3A2D5FBD0357A34 /* Pods_YTPlayerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CF0A559611EB7A364F0429 /* Pods_YTPlayerV2.framework */; };
 		7A03294B299CED14003E2690 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A03294A299CED14003E2690 /* PlayerModel.swift */; };
 		7A0FBFD5298EE773009A4A63 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FBFD4298EE773009A4A63 /* AppTheme.swift */; };
 		7A1D73E129881DC7002FA5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D73E029881DC7002FA5B5 /* AppDelegate.swift */; };
@@ -33,16 +31,25 @@
 		7A3CDF89298E9E7B00B5A70C /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF88298E9E7B00B5A70C /* NetworkConfiguration.swift */; };
 		7A3CDF8F298EAAB700B5A70C /* ContainerPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF8E298EAAB700B5A70C /* ContainerPresenterContract.swift */; };
 		7A3CDF91298EAC7E00B5A70C /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CDF90298EAC7E00B5A70C /* ContainerPresenter.swift */; };
+		7A4A9E912A0259A60035764D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E902A0259A60035764D /* RxCocoa */; };
+		7A4A9E932A0259A60035764D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E922A0259A60035764D /* RxRelay */; };
+		7A4A9E952A0259A60035764D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E942A0259A60035764D /* RxSwift */; };
+		7A4A9E982A0259EB0035764D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E972A0259EB0035764D /* Alamofire */; };
+		7A4A9E9B2A025A1D0035764D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E9A2A025A1D0035764D /* AlamofireImage */; };
+		7A4A9E9E2A025A3D0035764D /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9E9D2A025A3D0035764D /* YouTubeiOSPlayerHelper */; };
+		7A4A9EA12A025A660035764D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9EA02A025A660035764D /* SkeletonView */; };
+		7A4A9EA42A025ADD0035764D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9EA32A025ADD0035764D /* Moya */; };
+		7A4A9EA62A025ADD0035764D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7A4A9EA52A025ADD0035764D /* RxMoya */; };
 		7A579AD329995CBB0067D157 /* TopChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A579AD229995CBB0067D157 /* TopChannels.swift */; };
 		7A5A000129969E130007B27A /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A000029969E130007B27A /* Localized.swift */; };
 		7A5AFFFD29969CC30007B27A /* VideoStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AFFFC29969CC30007B27A /* VideoStatistics.swift */; };
 		7A5AFFFF29969D160007B27A /* VideoData+VideoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AFFFE29969D160007B27A /* VideoData+VideoItems.swift */; };
+		7A764D982A025B4600BE1759 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7A764D972A025B4600BE1759 /* SnapKit */; };
 		7A790A382995493B00E4DBB0 /* ChannelsPlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A372995493B00E4DBB0 /* ChannelsPlaylists.swift */; };
 		7A790A3A299549DF00E4DBB0 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A39299549DF00E4DBB0 /* Snippet.swift */; };
 		7A790A3C29954A2500E4DBB0 /* Thumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A3B29954A2500E4DBB0 /* Thumbnails.swift */; };
 		7A790A3E2995544000E4DBB0 /* PlaylistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A3D2995544000E4DBB0 /* PlaylistItems.swift */; };
 		7A790A402995553800E4DBB0 /* ResourceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A790A3F2995553800E4DBB0 /* ResourceId.swift */; };
-		DBDDF543A1C32E37AAC1825B /* Pods_YTPlayerV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E55F44A48F59089C7BDE4A8 /* Pods_YTPlayerV2Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,11 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E333EEAE12ACA696C5983AB /* Pods-YTPlayerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2.debug.xcconfig"; sourceTree = "<group>"; };
-		5C94BCBB90C0A6FC4771F677 /* Pods-YTPlayerV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2Tests.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2Tests/Pods-YTPlayerV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E55F44A48F59089C7BDE4A8 /* Pods_YTPlayerV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DD83DC081B81D0577676799 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2_YTPlayerV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		750C3FB24EBB69B41766B8D2 /* Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A03294A299CED14003E2690 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		7A0FBFD4298EE773009A4A63 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		7A1D73DD29881DC7002FA5B5 /* YTPlayerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTPlayerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,10 +107,6 @@
 		7A790A3B29954A2500E4DBB0 /* Thumbnails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnails.swift; sourceTree = "<group>"; };
 		7A790A3D2995544000E4DBB0 /* PlaylistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItems.swift; sourceTree = "<group>"; };
 		7A790A3F2995553800E4DBB0 /* ResourceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceId.swift; sourceTree = "<group>"; };
-		7F4E5580FB5628AE9CC3097B /* Pods-YTPlayerV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2Tests.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2Tests/Pods-YTPlayerV2Tests.release.xcconfig"; sourceTree = "<group>"; };
-		87032DB5ED641ABD51C02AD8 /* Pods-YTPlayerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2.release.xcconfig"; sourceTree = "<group>"; };
-		EA4BC68E30B60A4B303CFAD9 /* Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig"; path = "Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig"; sourceTree = "<group>"; };
-		F1CF0A559611EB7A364F0429 /* Pods_YTPlayerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTPlayerV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +114,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C17BC4F3A2D5FBD0357A34 /* Pods_YTPlayerV2.framework in Frameworks */,
+				7A4A9E952A0259A60035764D /* RxSwift in Frameworks */,
+				7A4A9EA12A025A660035764D /* SkeletonView in Frameworks */,
+				7A4A9EA42A025ADD0035764D /* Moya in Frameworks */,
+				7A4A9E982A0259EB0035764D /* Alamofire in Frameworks */,
+				7A4A9E9B2A025A1D0035764D /* AlamofireImage in Frameworks */,
+				7A4A9E932A0259A60035764D /* RxRelay in Frameworks */,
+				7A4A9EA62A025ADD0035764D /* RxMoya in Frameworks */,
+				7A4A9E912A0259A60035764D /* RxCocoa in Frameworks */,
+				7A4A9E9E2A025A3D0035764D /* YouTubeiOSPlayerHelper in Frameworks */,
+				7A764D982A025B4600BE1759 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBDDF543A1C32E37AAC1825B /* Pods_YTPlayerV2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B5D315F23837972412DCF2 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,12 +147,6 @@
 		31778D5D775FDAE0E9B8DECD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E333EEAE12ACA696C5983AB /* Pods-YTPlayerV2.debug.xcconfig */,
-				87032DB5ED641ABD51C02AD8 /* Pods-YTPlayerV2.release.xcconfig */,
-				750C3FB24EBB69B41766B8D2 /* Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig */,
-				EA4BC68E30B60A4B303CFAD9 /* Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig */,
-				5C94BCBB90C0A6FC4771F677 /* Pods-YTPlayerV2Tests.debug.xcconfig */,
-				7F4E5580FB5628AE9CC3097B /* Pods-YTPlayerV2Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -187,7 +186,6 @@
 				7A1D740029881DC9002FA5B5 /* YTPlayerV2UITests */,
 				7A1D73DE29881DC7002FA5B5 /* Products */,
 				31778D5D775FDAE0E9B8DECD /* Pods */,
-				9C82BCF7082484670A0D9354 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,16 +315,6 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
-		9C82BCF7082484670A0D9354 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F1CF0A559611EB7A364F0429 /* Pods_YTPlayerV2.framework */,
-				6DD83DC081B81D0577676799 /* Pods_YTPlayerV2_YTPlayerV2UITests.framework */,
-				5E55F44A48F59089C7BDE4A8 /* Pods_YTPlayerV2Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,17 +322,27 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A1D740729881DC9002FA5B5 /* Build configuration list for PBXNativeTarget "YTPlayerV2" */;
 			buildPhases = (
-				A93BD2088C1C654F087EF88F /* [CP] Check Pods Manifest.lock */,
 				7A1D73D929881DC7002FA5B5 /* Sources */,
 				7A1D73DA29881DC7002FA5B5 /* Frameworks */,
 				7A1D73DB29881DC7002FA5B5 /* Resources */,
-				2DB3B226F8EF2B0DD0B4A41C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = YTPlayerV2;
+			packageProductDependencies = (
+				7A4A9E902A0259A60035764D /* RxCocoa */,
+				7A4A9E922A0259A60035764D /* RxRelay */,
+				7A4A9E942A0259A60035764D /* RxSwift */,
+				7A4A9E972A0259EB0035764D /* Alamofire */,
+				7A4A9E9A2A025A1D0035764D /* AlamofireImage */,
+				7A4A9E9D2A025A3D0035764D /* YouTubeiOSPlayerHelper */,
+				7A4A9EA02A025A660035764D /* SkeletonView */,
+				7A4A9EA32A025ADD0035764D /* Moya */,
+				7A4A9EA52A025ADD0035764D /* RxMoya */,
+				7A764D972A025B4600BE1759 /* SnapKit */,
+			);
 			productName = YTPlayerV2;
 			productReference = 7A1D73DD29881DC7002FA5B5 /* YTPlayerV2.app */;
 			productType = "com.apple.product-type.application";
@@ -353,7 +351,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A1D740A29881DC9002FA5B5 /* Build configuration list for PBXNativeTarget "YTPlayerV2Tests" */;
 			buildPhases = (
-				DD9BBC1AA551C6D963AFF136 /* [CP] Check Pods Manifest.lock */,
 				7A1D73EF29881DC8002FA5B5 /* Sources */,
 				7A1D73F029881DC8002FA5B5 /* Frameworks */,
 				7A1D73F129881DC8002FA5B5 /* Resources */,
@@ -372,11 +369,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A1D740D29881DC9002FA5B5 /* Build configuration list for PBXNativeTarget "YTPlayerV2UITests" */;
 			buildPhases = (
-				1B693FC50855EB2115DAF726 /* [CP] Check Pods Manifest.lock */,
 				7A1D73F929881DC8002FA5B5 /* Sources */,
 				7A1D73FA29881DC8002FA5B5 /* Frameworks */,
 				7A1D73FB29881DC8002FA5B5 /* Resources */,
-				19910BF8A2D0D489049DF2BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +415,15 @@
 				Base,
 			);
 			mainGroup = 7A1D73D429881DC7002FA5B5;
+			packageReferences = (
+				7A4A9E8F2A0259A60035764D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				7A4A9E962A0259EB0035764D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7A4A9E992A025A1D0035764D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				7A4A9E9C2A025A3D0035764D /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				7A4A9E9F2A025A660035764D /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				7A4A9EA22A025ADD0035764D /* XCRemoteSwiftPackageReference "Moya" */,
+				7A764D962A025B4600BE1759 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7A1D73DE29881DC7002FA5B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,109 +466,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		19910BF8A2D0D489049DF2BA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2-YTPlayerV2UITests/Pods-YTPlayerV2-YTPlayerV2UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1B693FC50855EB2115DAF726 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YTPlayerV2-YTPlayerV2UITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DB3B226F8EF2B0DD0B4A41C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YTPlayerV2/Pods-YTPlayerV2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A93BD2088C1C654F087EF88F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YTPlayerV2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD9BBC1AA551C6D963AFF136 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YTPlayerV2Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A1D73D929881DC7002FA5B5 /* Sources */ = {
@@ -764,7 +665,6 @@
 		};
 		7A1D740829881DC9002FA5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E333EEAE12ACA696C5983AB /* Pods-YTPlayerV2.debug.xcconfig */;
 			buildSettings = {
 				API_KEY = "AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0";
 				API_YOUTUBE = "https://youtube.googleapis.com/youtube/v3/";
@@ -795,7 +695,6 @@
 		};
 		7A1D740929881DC9002FA5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87032DB5ED641ABD51C02AD8 /* Pods-YTPlayerV2.release.xcconfig */;
 			buildSettings = {
 				API_KEY = "AIzaSyBhxXFXV7LH2TpcWMsn4Z2qb0ZWt-xHYt0";
 				API_YOUTUBE = "https://youtube.googleapis.com/youtube/v3/";
@@ -826,7 +725,6 @@
 		};
 		7A1D740B29881DC9002FA5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C94BCBB90C0A6FC4771F677 /* Pods-YTPlayerV2Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -847,7 +745,6 @@
 		};
 		7A1D740C29881DC9002FA5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F4E5580FB5628AE9CC3097B /* Pods-YTPlayerV2Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -868,7 +765,6 @@
 		};
 		7A1D740E29881DC9002FA5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 750C3FB24EBB69B41766B8D2 /* Pods-YTPlayerV2-YTPlayerV2UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -887,7 +783,6 @@
 		};
 		7A1D740F29881DC9002FA5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA4BC68E30B60A4B303CFAD9 /* Pods-YTPlayerV2-YTPlayerV2UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -944,6 +839,118 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A4A9E8F2A0259A60035764D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		7A4A9E962A0259EB0035764D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7A4A9E992A025A1D0035764D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		7A4A9E9C2A025A3D0035764D /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		7A4A9E9F2A025A660035764D /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		7A4A9EA22A025ADD0035764D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		7A764D962A025B4600BE1759 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A4A9E902A0259A60035764D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E8F2A0259A60035764D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		7A4A9E922A0259A60035764D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E8F2A0259A60035764D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		7A4A9E942A0259A60035764D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E8F2A0259A60035764D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		7A4A9E972A0259EB0035764D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E962A0259EB0035764D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7A4A9E9A2A025A1D0035764D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E992A025A1D0035764D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		7A4A9E9D2A025A3D0035764D /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E9C2A025A3D0035764D /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+		7A4A9EA02A025A660035764D /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9E9F2A025A660035764D /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		7A4A9EA32A025ADD0035764D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9EA22A025ADD0035764D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		7A4A9EA52A025ADD0035764D /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A4A9EA22A025ADD0035764D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		7A764D972A025B4600BE1759 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A764D962A025B4600BE1759 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A1D73D529881DC7002FA5B5 /* Project object */;
 }
